@@ -1,0 +1,50 @@
+/* CSS Document */
+body {
+	background-color: #d7d6d3;
+	font-family:'verdana';
+}
+.id-card-holder {
+	width: 245px;
+	padding: 4px;
+	margin: 0 auto;
+	border-radius: 5px;
+	position: relative;
+}
+.id-card {
+	background-color: #fff;
+	padding: 10px;
+	border-radius: 10px;
+	text-align: center;
+	box-shadow: 0 0 1.5px 0px #b9b9b9;
+}
+.id-card img {
+	margin: 0 auto;
+}
+.header img {
+	width: 100px;
+}
+.photo img {
+	width: 80px;
+}
+h2 {
+	font-size: 15px;
+	margin: 5px 0px;
+}
+h3 {
+	font-size: 12px;
+	margin: 7px 0px;
+	font-weight: 300;
+}
+.qr-code img {
+	width: 50px;
+}
+p {
+	font-size: 8px;
+	margin: 2px;
+}
+.id-card-tag-strip {
+	width: 0px;
+	height: 40px;
+   
+}
+

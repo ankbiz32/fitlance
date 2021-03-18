@@ -1,0 +1,1 @@
+<footer class="main"> &copy; 2017 <strong>Cluebix App GYM </strong></footer>
