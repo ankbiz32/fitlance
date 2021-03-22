@@ -1,17 +1,22 @@
-	<ul id="main-menu" class="">
+<ul id="main-menu" class="">
 		<li class="active opened active"><a href="index.php"><i class="entypo-gauge"></i><span>Dashboard</span></a></li>
 	
-		<li><a href="?vis=category"><i class="entypo-users"></i><span>Members</span></a>
+		<li><a href="?vis=category"><i class="entypo-list"></i><span>Members</span></a>
 			<ul>
-				<li class="active"><a href="?vis=view_mem"><span>Members list</span></a></li>
+				<li class="active"><a href="?vis=view_mem"><span>Member Registration</span></a></li>
 				<!--<li><a href="?vis=transfer_member"><span>Transfer Membership</span></a></li>
 				<li><a href="?vis=table_view"><span>View / Enter Diet</span></a></li>-->
 				<li><a href="?vis=birthday_view"><span>Todays Birthday</span></a></li>
-				<li class="active"><a href="?vis=new_entry"><span>+ Add new member</span></a></li>
 			</ul>
 		</li>  
 
-		<li><a href="?vis=category"><i class="entypo-briefcase"></i><span>Staff</span></a>
+		<li><a href="?vis=add_enquiry"><i class="entypo-quote"></i><span>Enquiry Form</span></a></li>
+
+		<li><a href="?vis=follow_up"><i class="entypo-quote"></i><span>Todays Follow Up</span></a></li>
+
+		<li><a href="?vis=view_renewal"><i class="entypo-quote"></i><span>Renewal Member</span></a></li>
+	
+		<li><a href="?vis=category"><i class="entypo-users"></i><span>Staff</span></a>
 			<ul>
 				<li class="active"><a href="?vis=staff_details"><span>Staff Registration</span></a></li>
 				<li><a href="?vis=view_staff"><span>Staffs Payment </span></a></li>
@@ -27,25 +32,12 @@
 				<li><a href="?vis=view_trainerpay"><span>Trainers payment history with details</span></a></li>
 			</ul>
 		</li>
-
-		<li><a href="?vis=category"><i class="entypo-calendar"></i><span>Plans/Packages</span></a>
-			<ul>
-				<li class="active"><a href="?vis=view_plan"><span>Membership Plans/Packages</span></a></li>
-				<li><a href="?vis=view_tranier_plan"><span>Trainer Plans</span></a></li>
-			</ul>
-		</li>
-
-		<li><a href="?vis=add_enquiry"><i class="entypo-quote"></i><span>Enquiry Form</span></a></li>
-
-		<li><a href="?vis=follow_up"><i class="entypo-quote"></i><span>Todays Follow Up</span></a></li>
-
-		<li><a href="?vis=view_renewal"><i class="entypo-quote"></i><span>Renewal Member</span></a></li>
-
-		
 	
 		<!--<li><a href="?vis=payments"><i class="entypo-star"></i><span>Renewal / Collection Membership</span></a></li>-->
 	
-
+		<li><a href="?vis=view_plan"><i class="entypo-quote"></i><span>Plan / Package</span></a></li>
+		
+		<li><a href="?vis=view_tranier_plan"><i class="entypo-quote"></i><span>Trainer Plan </span></a></li>
 	
 		<li><a href="?vis=category"><i class="entypo-box"></i><span>Overview</span></a>
 			<ul>
@@ -55,7 +47,7 @@
 			</ul>
 		</li>
 	
-		<li><a href="?vis=category"><i class="entypo-rss"></i><span>Alerts</span></a>
+		<li><a href="?vis=category"><i class="entypo-alert"></i><span>Alerts</span></a>
 			<ul>
 				<li class="active"><a href="?vis=unpaid"><span>Unpaid Members</span></a></li>
 				<li><a href="?vis=sub_end"><span>Ending Membership</span></a></li>
@@ -77,20 +69,29 @@
 			</ul>
 		</li>-->
 	
-		<li><a href="?vis=company"><i class="entypo-info-circled"></i><span>Company Information</span></a>
+		<li><a href="?vis=company"><i class="entypo-doc-text"></i><span>Company Information</span></a>
+			<!--<ul>
+				<li class="active"><a href="?vis=attaindance"><span>Company Information</span></a></li>
+				<li><a href="?vis=view_attaindance"><span>Attaindance Report</span></a></li>
+			</ul>-->
 		</li>
 	
-	
-		
-		<!-- <li><a href="?vis=category"><i class="entypo-doc-text"></i><span>Report</span></a>
+		<!--<li><a href="?vis=category"><i class="entypo-doc-text"></i><span>Report</span></a>
 			<ul>
 				<li class="active"><a href="?vis=member_report"><span>Member Report</span></a></li>
 				<li><a href="?vis=staff_report"><span>Staff Report</span></a></li>
+				<li><a href="?vis=trainer_report"><span>Personal Trainer Report</span></a></li>
+			</ul>
+		</li>-->
+		
+		<li><a href="?vis=category"><i class="entypo-doc-text"></i><span>Report</span></a>
+			<ul>
+				<li class="active"><a href="?vis=member_report"><span>Member Report</span></a></li>
 				<li><a href="?vis=staff_report"><span>Expense Report</span></a></li>
 			</ul>
-		</li> -->
+		</li>
 	
-		<!-- <li><a href="?vis=more-userprofile"><i class="entypo-folder"></i><span>Profile</span></a></li> -->
+		<li><a href="?vis=more-userprofile"><i class="entypo-folder"></i><span>Profile</span></a></li>
 	
 		<li><a href="logout.php"><i class="entypo-logout"></i><span>Logout</span></a></li>
 	</ul>	

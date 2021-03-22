@@ -1,13 +1,7 @@
-﻿<style>
-.hed{
-padding-left:10px; 
-font-weight:bolder; 
-color:#960;
-}
-</style>
+﻿
 <div class="table-responsive">
 <div class="col-sm-12"><a href="?vis=trainer_plan" class="btn btn-sm btn-info pull-right">Add Trainer Plan</a></div>
-<h4>Trainer Plan Details:</h4>
+<h4 class="hed">Trainer Plan Details:</h4>
 <hr />
 <table class="table table-bordered datatable" id="table-1">
   <thead>

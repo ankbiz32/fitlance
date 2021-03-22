@@ -15,7 +15,7 @@ $currentYear = date('Y');
 ?>
 	<form action="submit_expance.php" enctype="multipart/form-data" method="POST" role="form" class="form-horizontal form-groups-bordered">
 		<div class="row">
-		  <h4 class="hed">Expances</h4>
+		  <h4 class="hed">Add Expenses</h4>
 		  <hr/>
 			<div class="col-md-4 form-group"><label for="field-1" class="col-sm-3 control-label">Item :</label>					
 				<div class="col-sm-9"><input type="text" name="item" id="item" class="form-control" placeholder="Item" ></div>
@@ -31,7 +31,8 @@ $currentYear = date('Y');
 		</div>
 		<div class="col-md-12 form-group">		
 			<div class="col-sm-offset-1 col-sm-11">
-				<button type="submit" class="btn btn-primary pull-right">Submit</button>
+				<button type="submit" class="btn btn-primary ">Submit</button>
+			    <button type="button" class="btn btn-secondary" onclick="history.back()">Cancel</button>
 			</div>
 		</div>
 	</form>

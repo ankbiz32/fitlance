@@ -14,7 +14,7 @@ include('vish_info/head.php');
 
                 <li>
                 
-                    <img src="../upload/LOGO_AIM_FITNESS_1536385051.png" alt="Aim Fitness" style="width:70px;"/>
+                    <img src="../upload/LOGO_AIM_FITNESS_1536385051.png" alt="Aim Fitness" style="width:30px;"/>
                     Welcome <?php echo $_SESSION['full_name']; ?> 
                 </li>					
             

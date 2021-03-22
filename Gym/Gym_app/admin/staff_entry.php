@@ -127,7 +127,8 @@ $currentYear = date('Y');
     </div>
 	  <div class="col-md-12 form-group">		
       <div class="col-sm-offset-1 col-sm-11">
-        <button type="submit" class="btn btn-primary pull-right">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+			<button type="button" class="btn btn-secondary" onclick="history.back()">Cancel</button>
       </div>
     </div>
   </form>

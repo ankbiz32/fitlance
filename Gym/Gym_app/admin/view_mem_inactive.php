@@ -17,6 +17,7 @@ a {color: #2652a5;}
 			<th>Total / Discount</th>
 			<th>Paid / Balance</th>
 			<th>Membership Expiry</th>
+			<th>Status</th>
 			<th>Action</th>
 			</tr>
 		</thead>
@@ -52,7 +53,8 @@ a {color: #2652a5;}
 					echo "<td>" . $row3['rate'] . " / " . $row['dis'] . "</td>";
 					echo "<td>" . $row['paid'] . " / " . $row['bal'] . "</td>";
 					echo "<td>" . $date1 . "</td>";
-					echo "<td><form action='active_member.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Active ' class='btn btn-success btn-sm pull-left'/></form></td></tr>";
+					echo "<td>INACTIVE</td>";
+					echo "<td><form action='active_member.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Make active ' class='btn btn-success btn-sm pull-left'/></form></td></tr>";
 					$sno++;
 					$msgid = 0;
 

@@ -302,8 +302,9 @@ $currentYear = date('Y');
     </div>
 
     <div class="col-md-12 form-group">		
-      <div class="col-sm-offset-1 col-sm-11">
-        <button type="submit" class="btn btn-primary pull-right">Submit</button>
+      <div class="col-sm-offset-1 col-sm-11 pull-right">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="?vis=view_mem" class="btn btn-secondary">Cancel</a>
       </div>
     </div>
 </form>

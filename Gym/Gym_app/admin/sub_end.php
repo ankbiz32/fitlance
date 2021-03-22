@@ -152,7 +152,7 @@
 						        echo "<td>" . $date3 . "</td>";
 						        $sno++;
 						        
-						        echo "<td><form action='deactive_member.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Active ' class='btn btn-success btn-sm pull-left'/></form><form action='?vis=make_payments' method='post'><input type='hidden' name='name' value='" . $row['mem_id'] . "'/><input type='submit' value='Renewal' class='btn btn-info'/></form></td></tr>";
+						        echo "<td><form action='deactive_member.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Make inactive ' onclick='return confirm(\"Are you sure you want to make this member inactive?\");' class='btn btn-success btn-sm pull-left'/></form><form action='?vis=make_payments' method='post'><input type='hidden' name='name' value='" . $row['mem_id'] . "'/><input type='submit' value='Renewal' class='btn btn-info'/></form></td></tr>";
 						        $msgid = 0;
 						    }
 						}

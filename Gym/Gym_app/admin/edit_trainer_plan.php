@@ -41,6 +41,7 @@ if (isset($_POST['name'])) {
       <div class="form-group">		
         <div class="col-sm-offset-3 col-sm-5">
           <button type="submit" class="btn btn-primary">Save</button>	
+        <button type="button" class="btn btn-secondary" onclick="history.back()">Cancel</button>
         </div>
       </div>				
   </form>

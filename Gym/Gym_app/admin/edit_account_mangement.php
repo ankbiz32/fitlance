@@ -27,7 +27,7 @@ $currentYear = date('Y');
 <form action="edit_submit_expance.php"  method="POST" role="form" class="form-horizontal form-groups-bordered">
 <input type="hidden" name="id" value="<?php echo $staffid;?>" />
 <div class="row">
-  <h4 class="hed">Update Expances :</h4>
+  <h4 class="hed">Update expense :</h4>
   <hr/>
 	<div class="col-md-4 form-group"><label for="field-1" class="col-sm-3 control-label">Item :</label>					
 		<div class="col-sm-9"><input type="text" name="item" id="item" class="form-control" placeholder="Item" value="<?php echo $item;?>" ></div>
@@ -43,7 +43,8 @@ $currentYear = date('Y');
 </div>
 <div class="col-md-12 form-group">		
 	<div class="col-sm-offset-1 col-sm-11">
-		<button type="submit" class="btn btn-primary pull-right">Submit</button>
+		<button type="submit" class="btn btn-primary">Submit</button>
+		<button type="button" class="btn btn-secondary" onclick="history.back()">Cancel</button>
 	</div>
 </div>
 </form>

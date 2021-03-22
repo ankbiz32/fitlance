@@ -53,6 +53,8 @@ $result = mysqli_query($con, $query);
 	}
 	?>
 </table>
+
+<button type="button" class="btn btn-secondary" onclick="history.back()">← Go back</button>	
 <?php
 } else {
   echo "<meta http-equiv='refresh' content='0; url=index.php?vis=payments'>";

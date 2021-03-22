@@ -1,5 +1,5 @@
 ﻿<div class="table-responsive">
-<h4>Plan Details:</h4>
+<h4 class="hed">Membership plans/packages details:</h4>
 <div class="col-sm-12" style="padding-bottom:15px;"><a href="?vis=new_plan" class="btn btn-sm btn-info pull-right">Add Plan</a></div>
 <hr />
 <table class="table table-bordered datatable" id="table-1">
