@@ -4,7 +4,7 @@ page_protect();
 include('vish_info/head.php');
 ?>
 <div class="main-content">
-    <div class="row">
+    <div class="row text-center">
         <!-- Profile Info and Notifications -->
         <div class="col-md-6 col-sm-8 clearfix"></div>
         <!-- Raw Links -->
@@ -12,7 +12,10 @@ include('vish_info/head.php');
             
             <ul class="list-inline links-list pull-right">
 
-                <li>Welcome <?php echo $_SESSION['full_name']; ?> 
+                <li>
+                
+                    <img src="../upload/LOGO_AIM_FITNESS_1536385051.png" alt="Aim Fitness" style="width:70px;"/>
+                    Welcome <?php echo $_SESSION['full_name']; ?> 
                 </li>					
             
                 <li>

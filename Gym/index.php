@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Cluebix App Gym" />
     <meta name="author" content="Vishnu K. Nimbulkar" />
-    <title>FitLance By Cluebix Software | Login</title>
+    <title>FitLance By DigiKraft Social | Login</title>
     <link rel="stylesheet" href="vishnu/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css"  id="style-resource-1">
     <link rel="stylesheet" href="vishnu/css/font-icons/entypo/css/entypo.css"  id="style-resource-2">
     <link rel="stylesheet" href="vishnu/css/font-icons/entypo/css/animation.css"  id="style-resource-3">

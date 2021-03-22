@@ -1,6 +1,7 @@
 <?php
 require 'db_conn.php';
 page_protect();
+// var_dump('<pre>',$_POST);exit;
 if (isset($_POST['trainer_id'])) {
   function getRandomWord($len = 3)
   {
@@ -8,10 +9,16 @@ if (isset($_POST['trainer_id'])) {
 	shuffle($word);
 	return substr(implode($word), 0, $len);
   }
+	$main_id    =  $_POST['main_id'];
 	$trainer_id    =  $_POST['trainer_id'];
 	$trainer_name  = rtrim($_POST['trainer_name']);
-    $designation   = rtrim($_POST['designation']);
-    $total_amount  = rtrim($_POST['total_amount']);
+	$member_id  = rtrim($_POST['member_id']);
+	$member_name  = rtrim($_POST['member_name']);
+	$session_name  = rtrim($_POST['session_name']);
+	$session_from  = rtrim($_POST['session_from']);
+	$session_to  = rtrim($_POST['session_to']);
+	$designation   = rtrim($_POST['designation']);
+	$total_amount  = rtrim($_POST['total_amount']);
 	$percentage    = rtrim($_POST['percentage']);
 	$paid_date2    =  $_POST['day'].'-'.$_POST['month'].'-'.$_POST['year'];
 	$paid_date1    = date('d-m-Y',strtotime($paid_date2));
@@ -20,7 +27,9 @@ if (isset($_POST['trainer_id'])) {
 	$bal = $total_amount - $paid;
 	$invoice   = substr(time(), 2, 10) . getRandomWord();
     $paid_date = date('Y-m-d',strtotime($paid_date1));
-    mysqli_query($con, "INSERT INTO trainer (trainer_id,trainer_name,designation,total_amount,percentage,paid,bal,paid_date,invoice,insert_by)VALUES('$trainer_id','$trainer_name','$designation','$total_amount','$percentage','$paid','$bal','$paid_date','$invoice','$insert_by')");
+    mysqli_query($con, "UPDATE trainer_pay SET total='$total_amount', paid=paid+$paid, paybalance=paybalance-$paid WHERE id=$main_id");
+
+    mysqli_query($con, "INSERT INTO trainer (trainer_id,trainer_name,member_id,member_name,session_name,session_from,session_to,designation,total_amount,percentage,paid,bal,paid_date,invoice,insert_by)VALUES('$trainer_id','$trainer_name','$member_id','$member_name','$session_name','$session_from','$session_to','$designation','$total_amount','$percentage','$paid','$bal','$paid_date','$invoice','$insert_by')");
     //print_r($_POST);
     //echo "<meta http-equiv='refresh' content='0; url=index.php?vis=trainer_pay'>";
 } else {
@@ -40,7 +49,9 @@ if (isset($_POST['trainer_id'])) {
 		$img_location = $row2['img_location'];
 	}
  }
+ header("Location: index.php?vis=view_trainerpay");
 ?>
+
 <!doctype html>
 	<head>
 		<meta charset="utf-8">

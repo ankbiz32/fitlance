@@ -57,6 +57,8 @@ $stafid = $_POST['name'];
 					<th>S.No.</th>
 					<th>Member ID / Member Name</th>
 					<th>Payment</th>
+					<th>Percent</th>
+					<th>Trainer payment</th>
 					<th>Session</th>
 					<th>Join Date / Expiry Date </th>
 					<th>Action </th>
@@ -82,6 +84,8 @@ $stafid = $_POST['name'];
 							echo "<tr><td>" . $sno . "</td>";
 							echo "<td>" . $row['member_id'] . " / " . $row['member_name'] . "</td>";
 							echo "<td>" . $row['total'] . "</td>";
+							echo "<td>40%</td>";
+							echo "<td>" . $row['total']*0.4 . "</td>";
 							echo "<td>" . $row21['name'] . "</td>";
 							echo "<td>" . $date1 . " / " . $date2 . "</td>";
 							$sno++;

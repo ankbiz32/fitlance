@@ -1,1 +1,1 @@
-<footer class="main"> &copy; <?php echo date(Y);?> <strong>Cluebix Software Pvt.Ltd</strong></footer>
+<footer class="main"> &copy; <?php echo date(Y);?> <strong>DigiKraft Social</strong></footer>

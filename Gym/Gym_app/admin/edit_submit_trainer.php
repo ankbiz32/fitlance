@@ -51,20 +51,20 @@ if (isset($_POST['id'])) {
 	$date = date('Y-m-d',strtotime($date1));
 	$urlredirect = $_POST['redirect'];
     mysqli_query($con, "UPDATE trainer_pay SET member_id='$member_name',member_name='$name_member',staff_id='$trainer_name',staff_name='$name_staff',trainer_type_id='$trainer_type_id',bank_id='$bank_id',paid_date='$date',join_date='$date',payment_method='$payment_method',cheque_no='$cheque_no',	total='$total',paid='$paid',invoice='$invoice',paybalance='$paybalance',expiry='$expiry',exp_time='$exp_time',insert_by='$insert_by' WHERE id='$id'");
-  // echo "<meta http-equiv='refresh' content='0; url=index.php?vis=trainer_details'>";
-    if($urlredirect == 'detalis'){
-	    echo "<meta http-equiv='refresh' content='0; url=index.php?vis=trainer_details'>";
-    }else{
-        echo "<meta http-equiv='refresh' content='0; url=index.php?vis=trainer_list'>";
-    }
+  	echo "<meta http-equiv='refresh' content='0; url=index.php?vis=trainer_details'>";
+    // if($urlredirect == 'detalis'){
+	//     echo "<meta http-equiv='refresh' content='0; url=index.php?vis=trainer_details'>";
+    // }else{
+    //     echo "<meta http-equiv='refresh' content='0; url=index.php?vis=trainer_list'>";
+    // }
 } else {
     echo "<head><script>alert('Profile NOT Updated, Check Again');</script></head></html>";
-    //echo "<meta http-equiv='refresh' content='0; url=index.php?vis=trainer_details'>";
-	 if($urlredirect == 'detalis'){
     echo "<meta http-equiv='refresh' content='0; url=index.php?vis=trainer_details'>";
-    }else{
-        echo "<meta http-equiv='refresh' content='0; url=index.php?vis=trainer_list'>";
-    }
+	//  if($urlredirect == 'detalis'){
+    // echo "<meta http-equiv='refresh' content='0; url=index.php?vis=trainer_details'>";
+    // }else{
+    //     echo "<meta http-equiv='refresh' content='0; url=index.php?vis=trainer_list'>";
+    // }
     
 }
 ?>

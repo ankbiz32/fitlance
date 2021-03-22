@@ -2,7 +2,7 @@
 	<div class="login-header login-caret">
 		<div class="login-content">
 			<a href="#" class="logo">
-				<img src="img/logo11.png" alt="Cluebix Gym" height="170" width="210" />
+				<img src="img/logo11.png" alt="Cluebix Gym" height="140"  />
 			</a>
 			<p class="description" style="color:#fff;">Dear user, log in to access the admin area!</p>
 			

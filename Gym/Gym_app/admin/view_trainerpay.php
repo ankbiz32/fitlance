@@ -6,26 +6,30 @@ color:#960;
 }
 </style>
 <div class="table-responsive">
-<h4 class="hed">Trainer Payments Details</h4>
-  <div class="col-sm-12" style="padding-bottom: 15px;"><form method="post" action="export_trainerpay.php"><input type="submit" name="export" class="btn btn-sm btn-danger pull-right" value="Export To Excel" /></form></div>
+<div class="row">
+	<h4 class="hed col-sm-6">Trainers payment history with details</h4>
+	  <div class="col-sm-6" style="padding-bottom: 15px;"><form method="post" action="export_trainerpay.php"><input type="submit" name="export" class="btn btn-sm btn-danger pull-right" value="Export To Excel" /></form></div>
+</div>
 <hr />
 	<table class="table table-bordered datatable" id="table-1">
 		<thead>
 			<tr>
 				<th>S.No.</th>
-				<th>Name / Staff ID</th>
-				<th>Designation</th>
+				<th>Trainer name / ID</th>
+				<th>Paid for Member / ID</th>
+				<th>Session</th>
+				<th>Session from / To</th>
 				<th>Total Amount</th>
 				<th>Percentage</th>
 				<th>Paid Amount</th>
-				<th>Paid Date </th>
+				<th>Payment Date </th>
 				<!--<th>Invoice </th>-->
 				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
 		<?php
-		$query  = "select * from trainer ORDER BY trainer_name DESC";
+		$query  = "select * from trainer ORDER BY id DESC";
 		//echo $query;
 		$result = mysqli_query($con, $query);
 		$sno    = 1;
@@ -39,7 +43,9 @@ color:#960;
 					$date = date('d-m-Y',strtotime( $row['paid_date'] ));
 						echo "<tr><td>" . $sno . "</td>";
 						echo "<td>" . $row['trainer_name'] . " / " . $row['trainer_id'] . "</td>";
-						echo "<td>" . $row3['name'] . "</td>";
+						echo "<td>" . $row['member_name'] . " / " . $row['member_id'] . "</td>";
+						echo "<td>" . $row['session_name'] . "</td>";
+						echo "<td>" . $row['session_from'] . " / " . $row['session_to'] . "</td>";
 						echo "<td>" . $row['total_amount'] . "</td>";
 						echo "<td>" . $row['percentage'] ."%" . "</td>";
 						echo "<td>" . $row['paid'] . "</td>";

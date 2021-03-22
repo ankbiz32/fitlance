@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Cluebix App Gym" />
     <meta name="author" content="Vishnu K. Nimbulkar" />
-    <title>Cluebix App GYM | Fitness Consultant </title>
+    <title>Fitness Consultant | DigiKraft App GYM </title>
     <link rel="stylesheet" href="../../vishnu/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css"  id="style-resource-1">
     <link rel="stylesheet" href="../../vishnu/css/font-icons/entypo/css/entypo.css"  id="style-resource-2">
     <link rel="stylesheet" href="../../vishnu/css/font-icons/entypo/css/animation.css"  id="style-resource-3">
@@ -61,6 +61,15 @@
 	<script src="../../js/plugins/jquery-ui/jquery.ui.spinner.js"></script>
 	<script src="../../js/plugins/jquery-ui/jquery.ui.slider.js"></script>
 	<script src="../../js/chosen.jquery.js"></script>
+	<style>
+		.hed{
+			font-weight:bolder; 
+			color:#960;
+		}
+		[class^="entypo-"]:before, [class*=" entypo-"]:before {
+			font-size:14px;
+		}
+	</style>
 	<script type="text/javascript">
 		$(document).ready(function()
 		{
@@ -132,13 +141,13 @@
 			<!-- logo -->
 			<div class="logo">
 				<a href="index.php">
-					<img src="../../img/logo11.png" alt="Orange Fitness" style="width:175px;height:150px;"/>
+					<img src="../../img/logo11.png" alt="Aim Fitness" style="width:175px;margin-top:20px;margin-left:15px"/>
 				</a>
 			</div>
 			
-					<!-- logo collapse icon -->
-					<div class="sidebar-collapse">
-				     <a href="#" class="sidebar-collapse-icon with-animation">
+			<!-- logo collapse icon -->
+			<div class="sidebar-collapse">
+				<a href="#" class="sidebar-collapse-icon with-animation">
 					<i class="entypo-menu"></i>
 				</a>
 			</div>

@@ -26,10 +26,10 @@
 		
 		<li><a href="?vis=category"><i class="entypo-user"></i><span>Personal Trainer</span></a>
 			<ul>
-				<li class="active"><a href="?vis=trainer_details"><span>Personal Trainer Registration</span></a></li>
-				<li><a href="?vis=renewal_trainer"><span>Renewal Personal Trainers</span></a></li>
-				<li><a href="?vis=trainer_payment"><span>Trainer Payment </span></a></li>
-				<li><a href="?vis=view_trainerpay"><span>Trainer Payment Details</span></a></li>
+				<!-- <li><a href="?vis=trainer_payment"><span>+ Add trainer payment</span></a></li> -->
+				<li class="active"><a href="?vis=trainer_details"><span>Member & Trainer list</span></a></li>
+				<!-- <li><a href="?vis=renewal_trainer"><span>Renewal Personal Trainers</span></a></li> -->
+				<li><a href="?vis=view_trainerpay"><span>Trainers payment history with details</span></a></li>
 			</ul>
 		</li>
 	
@@ -58,7 +58,7 @@
 			</ul>
 		</li>
 	
-		<li><a href="?vis=account_mangement"><i class="entypo-star"></i><span>Expances</span></a></li>
+		<li><a href="?vis=account_mangement"><i class="entypo-star"></i><span>Expenses</span></a></li>
 	
 		<!--<li><a href="?vis=visitor"><i class="entypo-list"></i><span>Visitor</span></a></li>-->
 	
@@ -87,7 +87,7 @@
 		<li><a href="?vis=category"><i class="entypo-doc-text"></i><span>Report</span></a>
 			<ul>
 				<li class="active"><a href="?vis=member_report"><span>Member Report</span></a></li>
-				<li><a href="?vis=staff_report"><span>Expance Report</span></a></li>
+				<li><a href="?vis=staff_report"><span>Expense Report</span></a></li>
 			</ul>
 		</li>
 	

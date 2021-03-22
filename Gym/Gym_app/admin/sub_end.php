@@ -65,7 +65,7 @@
 			<tbody>
 				<?php
 				$time    = time();
-				$newtime = $time + 864000;
+				$newtime = $time + 864000; //10 days after current day
 				$query   = "select * from subsciption WHERE exp_time < $newtime AND renewal='yes' AND bal=0 AND expiry  BETWEEN '$from2' AND '$to2' AND is_active='1' ORDER BY expiry DESC";
 				$result  = mysqli_query($con, $query);
 				$sno     = 1;

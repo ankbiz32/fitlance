@@ -5,8 +5,8 @@ font-weight:bolder;
 color:#960;
 }
 </style>
-<h4 class="hed">Expances</h4>
-<div class="col-sm-12" style="padding-bottom:15px;"><form method="post" action="export_expances.php"><input type="submit" name="export" class="btn btn-sm btn-success pull-right" value="Export To Excel" /></form><a href="?vis=expance" class="btn btn-sm btn-info pull-right">Add Expances</a></div>
+<h4 class="hed">Expenses</h4>
+<div class="col-sm-12" style="padding-bottom:15px;"><form method="post" action="export_expances.php"><input type="submit" name="export" class="btn btn-sm btn-success pull-right" value="Export To Excel" /></form><a href="?vis=expance" class="btn btn-sm btn-info pull-right">Add Expenses</a></div>
 <hr />
 	<table class="table table-bordered datatable" id="table-1">
 		<thead>

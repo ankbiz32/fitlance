@@ -68,6 +68,7 @@ $currentYear = date('Y');
 		</table>
 	<b>Monthly Member</b>
 	<hr />
+	<input type='hidden' name='main_id' value='<?php echo $msgid?>'>
 		<table class="table table-bordered datatable">
 			<thead>
 				<tr>
@@ -96,10 +97,10 @@ $currentYear = date('Y');
 							$date1 = date('d-m-Y',strtotime( $row['paid_date'] ));
 							$date2 = date('d-m-Y',strtotime( $row['expiry'] ));
 							echo "<tr><td>" . $sno . "</td>";
-							echo "<td>" . $row['member_id'] . " / " . $row['member_name'] . "</td>";
+							echo "<td><input type='hidden' name='member_id' value='".$row["member_id"]."'><input type='hidden' name='member_name' value='".$row["member_name"]."'>" . $row['member_id'] . " / " . $row['member_name'] . "</td>";
 							echo "<td>" . $row['total'] . "</td>";
-							echo "<td>" . $row21['name'] . "</td>";
-							echo "<td>" . $date1 . " / " . $date2 . "</td>";
+							echo "<td><input type='hidden' name='session_name' value='".$row21["name"]."'>" . $row21['name'] . "</td>";
+							echo "<td><input type='hidden' name='session_from' value='".$date1."'><input type='hidden' name='session_to' value='".$date2."'>" . $date1 . " / " . $date2 . "</td>";
 							$totol = $totol + $row['total'];
 							$sno++;
 							$stafid = 0;
