@@ -1,17 +1,17 @@
     <div class="col-md-12 col-sm-12 clearfix">
     <ul class="list-inline links-list pull-left">
-        <li><a href="?vis=new_entry" class="btn btn-success btn-sm">Add Member</a></li>
-        <li><a href="?vis=view_mem" class="btn btn-info btn-sm">Active Member</a></li>
-        <li><a href="?vis=view_mem_inactive" class="btn btn-success btn-sm">Inactive Member</a></li>
-        <li><a href="?vis=unpaid" class="btn btn-info btn-sm">Pending Payment</a></li>
+        <li><a href="?vis=new_entry" class="btn btn-success btn-sm">+ Add new member</a></li>
+        <li><a href="?vis=view_mem" class="btn btn-info btn-sm">Active Members</a></li>
+        <li><a href="?vis=view_mem_inactive" class="btn btn-success btn-sm">Inactive Members</a></li>
+        <li><a href="?vis=unpaid" class="btn btn-info btn-sm">Pending payments of members</a></li>
         <li><a href="?vis=sub_end" class="btn btn-success btn-sm">Ending Membership</a></li>
         <li><a href="?vis=add_enquiry" class="btn btn-info btn-sm">Enquiry Form</a></li>
-        <li><a href="?vis=view_renewal" class="btn btn-success btn-sm">Renewal Membership</a></li>
+        <!-- <li><a href="?vis=view_renewal" class="btn btn-success btn-sm">Renewal Membership</a></li> -->
         <li><a href="?vis=unpaid_trainer" class="btn btn-info btn-sm">Due Payments of Personal Trainers</a></li>
     </ul>
-    <ul class="list-inline links-list pull-left">
+    <!-- <ul class="list-inline links-list pull-left">
         <li><a href="?vis=renewal_trainer" class="btn btn-success btn-sm">Renewal Personal Trainers</a></li>
-    </ul>
+    </ul> -->
     </div>
     <hr />
 

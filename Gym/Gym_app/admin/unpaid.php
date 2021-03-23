@@ -1,12 +1,7 @@
-﻿<style>
-.hed{
-padding-left:10px; 
-font-weight:bolder; 
-color:#960;
-}
-</style>
+﻿
 <div class="table-responsive">
   <h4 class="hed">Pending / Unpaid Member List</h4>
+  <p>List of all members with pending payments.</p>
   <div class="col-sm-12" style="padding-bottom:15px;"><form method="post" action="export_pending.php"><input type="submit" name="export" class="btn btn-sm btn-success pull-right" value="Export To Excel" /></form></div>
   <hr />
 	<table class="table table-bordered datatable" id="table-2">
@@ -17,7 +12,7 @@ color:#960;
 				<th>Name / Member ID</th>
 				<th>Contact</th>
 				<th>Plan Name / Rate</th>
-				<th>Discount / Total</th>
+				<th>Total / Discount </th>
 				<th>Paid / Balance</th>
 				<th>Join Date / Expiry Date</th>
 				<th>Date of Payment</th>
@@ -50,7 +45,7 @@ color:#960;
 						echo "<td>" . $row['name']. " / " .  $msgid . "</td>";
 						echo "<td>" . $row1['contact'] . "</td>";
 						echo "<td>" . $row['sub_type_name'] .  " / " .  $row11['rate'] . "</td>";
-						echo "<td>" . $row['dis'] . " / " . $row['total'] ."</td>";
+						echo "<td>" . $row['total'] . " / " . $row['dis'] ."</td>";
 						echo "<td>" . $row['paid'] . " / ". $row['bal'] . "</td>";
 						echo "<td>" . $date1 . " / " . $date2 . "</td>";
 						echo "<td>" . $date3 . "</td>";

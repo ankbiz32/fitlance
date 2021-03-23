@@ -54,7 +54,7 @@ a {color: #2652a5;}
 					echo "<td>" . $row['paid'] . " / " . $row['bal'] . "</td>";
 					echo "<td>" . $date1 . "</td>";
 					echo "<td>INACTIVE</td>";
-					echo "<td><form action='active_member.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Make active ' class='btn btn-success btn-sm pull-left'/></form></td></tr>";
+					echo "<td><form action='active_member.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' onclick='return confirm(\"Are you sure you want to make this member active?\");' value='Make active ' class='btn btn-success btn-sm pull-left'/></form></td></tr>";
 					$sno++;
 					$msgid = 0;
 

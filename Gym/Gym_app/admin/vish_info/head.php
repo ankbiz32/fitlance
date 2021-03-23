@@ -32,6 +32,7 @@
 	<!-- Plupload -->
 	<link rel="stylesheet" href="../../css/plugins/plupload/jquery.plupload.queue.css">
 	<link rel="stylesheet" href="../../css/chosen.css">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon.png">
 
     <script src="../../vishnu/js/jquery-1.10.2.min.js"></script>
     <!-- jQuery UI -->
@@ -141,7 +142,7 @@
 			<!-- logo -->
 			<div class="logo">
 				<a href="index.php">
-					<img src="../../img/logo11.png" alt="Aim Fitness" style="width:175px;margin-top:20px;margin-left:15px"/>
+					<img src="../../img/fitlance-logo-new.png" alt="Aim Fitness" style="width:175px;margin-top:20px;margin-left:15px"/>
 				</a>
 			</div>
 			

@@ -2,7 +2,7 @@
 	<div class="login-header login-caret">
 		<div class="login-content">
 			<a href="#" class="logo">
-				<img src="img/logo11.png" alt="Cluebix Gym" height="140"  />
+				<img src="img/fitlance-logo-new.png" alt="Fitlance by DigiKraft Social" width="300"  />
 			</a>
 			<p class="description" style="color:#fff;">Dear user, log in to access the admin area!</p>
 			
