@@ -56,7 +56,7 @@ page_protect();
 			
 		mysqli_query($con, "UPDATE subsciption SET sub_type='$mem_type',sub_type_name='$name_type',paid_date='$joindate',total='$total',dis='$dis',paid='$paid',bal='$bal',expiry='$expiry',payment_method='$payment_method',cheque_no='$chequeno',bank_id='$bank_id',pay_date='$curr_date' WHERE mem_id=$p_id AND invoice='".$invoice."'");
 		mysqli_query($con, "UPDATE payment SET sub_type='$mem_type',sub_type_name='$name_type',total='$total',dis='$dis',paid='$paid',bal='$bal',expiry='$expiry',payment_method='$payment_method',cheque_no='$chequeno',bank_id='$bank_id',pay_date='$curr_date' WHERE mem_id=$p_id AND invoice='".$invoice."'");
-		//echo "<meta http-equiv='refresh' content='0; url=index.php?vis=view_mem'>";
+		echo "<meta http-equiv='refresh' content='0; url=index.php?vis=view_mem'>";
 	} else {
 		echo "<head><script>alert('Profile NOT Updated, Check Again');</script></head></html>";
 		echo "<meta http-equiv='refresh' content='0; url=index.php?vis=view_mem'>";
@@ -144,8 +144,10 @@ page_protect();
     		window.print();
 		}
     </script>
+	
+	<?php echo "<meta http-equiv='refresh' content='0; url=index.php?vis=view_mem'>";?>
 	</head>
-	<body>
+	<!-- <body>
 	    <a href="javascript:void();" onClick="printbody()">Print</a> | <?php echo "<form action='index.php?vis=edit_member' method='post' id='hed'><input type='hidden' name='name' value='" . $p_id . "'/><button type='submit' class='hed_btn'>Back</button></form>" ?>
 		<header>
 			<a href="index.php?vis=view_mem"><h1>Invoice (New Registration)</h1></a>
@@ -256,7 +258,7 @@ page_protect();
 		</article>
 		<br>
 		<center><h3>Website : <b><?php echo $website;?></b></h3></center>
-	</body>
+	</body> -->
 </html>
 <style>
 #hed {

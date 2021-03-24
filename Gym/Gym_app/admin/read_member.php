@@ -2,6 +2,8 @@
 .hed{padding-left:10px; font-weight:bolder; color:#960;}
 a {color: #2652a5;}
 </style>
+
+	<button type="button" class="btn btn-secondary" onclick="history.back()">← Go back</button> <br><br>
 	<?php 
 	if (isset($_POST['name'])) { ?>
 	<b>Member Details of : -  <?php
@@ -108,7 +110,11 @@ a {color: #2652a5;}
 					echo "<td>" . $row3['rate'] . " / " . $row['dis'] . "</td>";
 					echo "<td>" . $row['paid'] . " / " . $row['bal'] . "</td>";
 					echo "<td>" . $date4  . "</td>";
-					echo "<td><form action='?vis=view_payment_details' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='View Payment ' class='btn btn-warning btn-sm pull-left'/></form><form action='gen_invoice.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Print Invoice ' class='btn btn-info btn-sm pull-left'/></form><form action='del_invoice.php' method='post' onSubmit='return ConfirmDelete();'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Delete Invoice ' class='btn btn-danger btn-sm pull-left'/></form></td></tr>";
+
+					echo "<td><form action='?vis=view_payment_details' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='View Payment ' class='btn btn-warning btn-sm pull-left'/></form><form action='gen_invoice.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Print Invoice ' class='btn btn-info btn-sm pull-left'/></form></td></tr>";
+
+					// echo "<td><form action='?vis=view_payment_details' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='View Payment ' class='btn btn-warning btn-sm pull-left'/></form><form action='gen_invoice.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Print Invoice ' class='btn btn-info btn-sm pull-left'/></form><form action='del_invoice.php' method='post' onSubmit='return ConfirmDelete();'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Delete Invoice ' class='btn btn-danger btn-sm pull-left'/></form></td></tr>";
+
 				$sno++;
 				$msgid = 0;
 				}

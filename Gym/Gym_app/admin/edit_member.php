@@ -23,19 +23,19 @@ $currentYear = date('Y');
 	//echo $query;
 	$result = mysqli_query($con, $query);
 	$sno    = 1;
-	if (mysqli_affected_rows($con) == 1) {
+	if (mysqli_affected_rows($con)) {
 		while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 			$query1  = "select * from subsciption WHERE mem_id='$memid'";
 			//echo $query1;
 			$result1 = mysqli_query($con, $query1);
-			if (mysqli_affected_rows($con) == 1) {
+			if (mysqli_affected_rows($con)) {
 				while ($row1 = mysqli_fetch_array($result1, MYSQLI_ASSOC)) {
 					//$invoice = $row1['invoice'];
 					$mem_type = $row1['sub_type'];
 					$query2 = "select * from mem_types WHERE mem_type_id='$mem_type'";
 					//echo $query2;
 					$result2 = mysqli_query($con, $query2);
-					if (mysqli_affected_rows($con) == 1) {
+					if (mysqli_affected_rows($con)) {
 						while ($row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC)) {
 							$rate = $row2['rate'];
 							$sub_type_name = $row1['sub_type_name'];
