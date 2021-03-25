@@ -94,13 +94,13 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 	else
 	{
 	   echo "<head><script>alert('Member Id already exists, Check Again');</script></head></html>";
-       echo "<meta http-equiv='refresh' content='0; url=index.php?vis=add_enquiry'>";
+       echo "<meta http-equiv='refresh' content='0; url=index.php?vis=add_enquiry2'>";
 	}
 	}
 	else
 	{
 	   echo "<head><script>alert('Member Id already exists, Check Again');</script></head></html>";
-       echo "<meta http-equiv='refresh' content='0; url=index.php?vis=add_enquiry'>";
+       echo "<meta http-equiv='refresh' content='0; url=index.php?vis=add_enquiry2'>";
 	}
 }else{
 
@@ -130,7 +130,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 		echo "<meta http-equiv='refresh' content='0; url=index.php?vis=follow_up'>";
     } else {
     echo "<head><script>alert('Follow Up NOT Add, Check Again');</script></head></html>";
-    echo "<meta http-equiv='refresh' content='0; url=index.php?vis=add_enquiry'>";
+    echo "<meta http-equiv='refresh' content='0; url=index.php?vis=add_enquiry2'>";
     }
 }
  $query2 = "select * from card ";

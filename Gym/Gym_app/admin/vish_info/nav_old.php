@@ -10,7 +10,7 @@
 			</ul>
 		</li>  
 
-		<li><a href="?vis=add_enquiry"><i class="entypo-quote"></i><span>Enquiry Form</span></a></li>
+		<li><a href="?vis=add_enquiry2"><i class="entypo-quote"></i><span>Enquiry Form</span></a></li>
 
 		<li><a href="?vis=follow_up"><i class="entypo-quote"></i><span>Todays Follow Up</span></a></li>
 

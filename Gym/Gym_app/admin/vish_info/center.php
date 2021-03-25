@@ -5,7 +5,7 @@
         <li><a href="?vis=view_mem_inactive" class="btn btn-success btn-sm">Inactive Members</a></li>
         <li><a href="?vis=unpaid" class="btn btn-info btn-sm">Pending payments of members</a></li>
         <li><a href="?vis=sub_end" class="btn btn-success btn-sm">Ending Membership</a></li>
-        <li><a href="?vis=add_enquiry" class="btn btn-info btn-sm">Enquiry Form</a></li>
+        <li><a href="?vis=add_enquiry2" class="btn btn-info btn-sm">Enquiry Form</a></li>
         <!-- <li><a href="?vis=view_renewal" class="btn btn-success btn-sm">Renewal Membership</a></li> -->
         <li><a href="?vis=unpaid_trainer" class="btn btn-info btn-sm">Due Payments of Personal Trainers</a></li>
     </ul>

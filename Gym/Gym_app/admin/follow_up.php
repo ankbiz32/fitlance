@@ -52,7 +52,8 @@
 				<th>S.No</th>
 				<th>Name</th>
 				<th>Address / Contact</th>
-				<th>Date</th>
+				<th>Enq. Date/ Follow-up date</th>
+				<th>Comments</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -67,11 +68,13 @@
 					$msgid = $row1['id'];
 					$joining = $row1['joining'];
 					$status = $row1['status'];
-					$date1 = date('d-m-Y', strtotime( $row1['joining'] ));
+					$date1 = date('d-m-Y', strtotime( $row1['curr_date'] ));
+					$date2 = date('d-m-Y', strtotime( $row1['joining'] ));
 					echo "<tr><td>" . $sno . "</td>";
 					echo "<td>" . $row1['name'] . "</td>";
                     echo "<td>" . $row1['address'] . " / " . $row1['contact'] . "</td>";
-					echo "<td>" . $date1 . "</td>";
+					echo "<td>" . $date1 . " / ".$date2."</td>";
+					echo "<td>" . $row1['comment']."</td>";
                     if($status == 0){
 						echo"<td><form action='index.php?vis=add_member' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Add Member' class='btn btn-info btn-sm pull-left'/></form>
 						<form action='index.php?vis=edit_follow' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Edit' class='btn btn-warning btn-sm pull-left'/></form>
@@ -99,7 +102,8 @@
 				<th>S.No</th>
 				<th>Name</th>
 				<th>Address / Contact</th>
-				<th>Date</th>
+				<th>Enq. Date/ Follow-up date</th>
+				<th>Comments</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -116,11 +120,13 @@
 					$msgid = $row['id'];
 					$joining = $row['joining'];
 					$status = $row['status'];
-					$date1 = date('d-m-Y', strtotime( $row['joining'] ));
+					$date1 = date('d-m-Y', strtotime( $row['curr_date'] ));
+					$date2 = date('d-m-Y', strtotime( $row['joining'] ));
 					echo "<tr><td>" . $sno . "</td>";
 					echo "<td>" . $row['name'] . "</td>";
                     echo "<td>" . $row['address'] . " / " . $row['contact'] . "</td>";
-					echo "<td>" . $date1 . "</td>";
+					echo "<td>" . $date1 . " / ".$date2."</td>";
+					echo "<td>" . $row['comment']."</td>";
                     if($status == 0){
 						echo"<td><form action='index.php?vis=add_member' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Add Member' class='btn btn-info btn-sm pull-left'/></form>
 						<form action='index.php?vis=edit_follow' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Edit' class='btn btn-warning btn-sm pull-left'/></form>
