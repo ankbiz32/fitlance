@@ -17,8 +17,8 @@ if (isset($_POST['id'])) {
 	$location="../upload/" . $newFilename; 
 	
 	mysqli_query($con, "UPDATE card SET name='$name',address='$address',mobile='$mobile',email='$email',website='$website',img_location='$location' WHERE id=$id");
-	//echo "<meta http-equiv='refresh' content='0; url=index.php?vis=company'>";
-	print_r($_POST);
+	echo "<meta http-equiv='refresh' content='0; url=index.php?vis=company'>";
+	// print_r($_POST);
 } else {
     echo "<head><script>alert('Item NOT Updated, Check Again');</script></head></html>";
     echo "<meta http-equiv='refresh' content='0; url=index.php?vis=company'>";

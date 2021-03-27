@@ -16,7 +16,7 @@
 		</thead>
 		<tbody>
 		<?php
-		$query  = "select * from card ORDER BY id DESC";
+		$query  = "select * from card where branch_id = '$_SESSION[branch_id]' ORDER BY id DESC ";
 		$result = mysqli_query($con, $query);
 		$sno    = 1;
 			if (mysqli_affected_rows($con) != 0) {

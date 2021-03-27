@@ -23,7 +23,7 @@
             <h2>Paid Income This Month</h2><br>	
             <?php
             $date  = date('Y-m');
-            $query = "select * from subsciption WHERE  paid_date LIKE '$date%'";
+            $query = "select * from subsciption WHERE  paid_date LIKE '$date%' AND branch_id='$_SESSION[branch_id]' ";
             $result  = mysqli_query($con, $query);
             $revenue = 0;
             if (mysqli_affected_rows($con) != 0) {

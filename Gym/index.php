@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="vishnu/css/custom.css"  id="style-resource-6">
     <link rel="shortcut icon" sizes="57x57" href="img/50.png">
     <script src="vishnu/js/jquery-1.10.2.min.js"></script>
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
 
 </head>
 

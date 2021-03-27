@@ -1,5 +1,6 @@
 <?php
 require 'db_conn.php';
+session_start();
 if (isset($_POST['name'])) {
 	$urlredirect = $_POST['redirect'];
     $invoice = $_POST['name'];
@@ -36,8 +37,8 @@ if (isset($_POST['name'])) {
     echo "<meta http-equiv='refresh' content='0; url=index.php?vis=view_mem'>";
     
 }
- $query2 = "select * from card ";
- //echo $query2;
+ $query2 = "select * from card where branch_id='$_SESSION[branch_id]' ";
+//  echo $query2;exit;
  $result2 = mysqli_query($con, $query2);
  if (mysqli_affected_rows($con) != 0) {
 	while ($row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC)) {

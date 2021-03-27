@@ -64,28 +64,27 @@ if ($count == 1) {
 	$_SESSION['branch_id']  = $info['branch_id'];
     $auth_l_x               = $_SESSION['auth_level'];
     if ($auth_l_x == 1) {
-	  //echo $auth_l_x;
-	  $days_ago = date('Y-m-d', strtotime('+10 days', strtotime(date('Y-m-d'))));
-      //echo $days_ago;
-      //exit;
-      $query1 ="select * from subsciption WHERE expiry ='".$days_ago."' AND msg_status = '0' AND bal>0";
-      $result = mysqli_query($con,$query1);
-      if (mysqli_affected_rows($con) != 0) {
-        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-        $msgid   = $row['mem_id'];
-        $query2  = "select * from user_data WHERE newid='$msgid' AND is_active='1'";
-		$result2 = mysqli_query($con, $query2);
-        $row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC);
-        $name = $row2['name'];
-        $contact= $row2['contact'];
-        $balance = $row['bal'];
-        $expdate = $row['expiry'];
-        $message = urlencode('Dear '.$name.' ( Member Id : '.$msgid.') your pending amount of Rs.'.$balance.' is expected on '.$expdate.' from Aim Fitness.');
-        expiry_msg($message,$contact);
-        mysqli_query($con, "UPDATE subsciption SET msg_status='1' WHERE id=".$row['id']."");
-               
+        //echo $auth_l_x;
+        $days_ago = date('Y-m-d', strtotime('+10 days', strtotime(date('Y-m-d'))));
+        //echo $days_ago;
+        //exit;
+        $query1 ="select * from subsciption WHERE expiry ='".$days_ago."' AND msg_status = '0' AND bal>0";
+        $result = mysqli_query($con,$query1);
+        if (mysqli_affected_rows($con) != 0) {
+            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                $msgid   = $row['mem_id'];
+                $query2  = "select * from user_data WHERE newid='$msgid' AND is_active='1'";
+                $result2 = mysqli_query($con, $query2);
+                $row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC);
+                $name = $row2['name'];
+                $contact = $row2['contact'];
+                $balance = $row['bal'];
+                $expdate = $row['expiry'];
+                $message = urlencode('Dear '.$name.' ( Member Id : '.$msgid.') your pending amount of Rs.'.$balance.' is expected on '.$expdate.' from Aim Fitness.');
+                expiry_msg($message,$contact);
+                mysqli_query($con, "UPDATE subsciption SET msg_status='1' WHERE id=".$row['id']."");
+            }
         }
-    }
         header("location: Gym_app/admin/");
     } else if ($auth_l_x == 2) {
        header("location: Gym_app/branch/");

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Cluebix App Gym" />
     <meta name="author" content="Vishnu K. Nimbulkar" />
-    <title>Cluebix App GYM | Login</title>
+    <title>Fitness Consultant | DigiKraft App GYM</title>
 
     <link rel="stylesheet" href="vishnu/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css"  id="style-resource-1">
     <link rel="stylesheet" href="vishnu/css/font-icons/entypo/css/entypo.css"  id="style-resource-2">
@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="vishnu/css/vishnu.css"  id="style-resource-5">
     <link rel="stylesheet" href="vishnu/css/custom.css"  id="style-resource-6">
 	<link rel="shortcut icon" sizes="57x57" href="img/50.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
     <script src="vishnu/js/jquery-1.10.2.min.js"></script>
 
 </head>
@@ -28,9 +29,9 @@
 				<div class="login-content">
 					
 					<a href="#" class="logo">
-						<img src="img/logo.png" alt="Orange Fitness" />
+						<img src="img/fitlance-logo-new.png" alt="logo" width=300/>
 					</a>
-			
+					<p class="description" style="color:#fff;">Enter below information to reset your password.</p>
 				</div>
 				
 			</div>
@@ -79,7 +80,7 @@
 						
 						<div class="form-group">
 							<button type="Submit" name="btnLogin" class="btn btn-primary">
-								Login In
+								Submit
 								<i class="entypo-login"></i>
 							</button>
 							<button type="button" class="btn btn-primary">Cancel</button>
