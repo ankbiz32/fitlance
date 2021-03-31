@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'db_conn.php';
 if (isset($_POST['name'])) {
       $newid = $_POST['name'];
@@ -12,7 +13,7 @@ if (isset($_POST['name'])) {
 				   $contact  = $row['contact'];
 		   }
 		 }
-	 $query2 = "select * from card ";
+	 $query2 = "select * from card where branch_id = '$_SESSION[branch_id]'";
 	 //echo $query2;
      $result2 = mysqli_query($con, $query2);
      if (mysqli_affected_rows($con) != 0) {

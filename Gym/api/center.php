@@ -1,19 +1,4 @@
-    <div class="col-md-12 col-sm-12 clearfix">
-    <ul class="list-inline links-list pull-left">
-        <li><a href="?vis=new_entry" class="btn btn-success btn-sm">+ Add new member</a></li>
-        <li><a href="?vis=view_mem" class="btn btn-info btn-sm">Active Members</a></li>
-        <li><a href="?vis=view_mem_inactive" class="btn btn-success btn-sm">Inactive Members</a></li>
-        <li><a href="?vis=unpaid" class="btn btn-info btn-sm">Pending payments of members</a></li>
-        <li><a href="?vis=sub_end" class="btn btn-success btn-sm">Ending Membership</a></li>
-        <li><a href="?vis=add_enquiry2" class="btn btn-info btn-sm">Enquiry Form</a></li>
-        <!-- <li><a href="?vis=view_renewal" class="btn btn-success btn-sm">Renewal Membership</a></li> -->
-        <li><a href="?vis=unpaid_trainer" class="btn btn-info btn-sm">Due Payments of Personal Trainers</a></li>
-    </ul>
-    <!-- <ul class="list-inline links-list pull-left">
-        <li><a href="?vis=renewal_trainer" class="btn btn-success btn-sm">Renewal Personal Trainers</a></li>
-    </ul> -->
-    </div>
-    <hr />
+
 
     <div class="row">
         <div class="col-sm-3">			
@@ -197,31 +182,5 @@
 		</tbody>
 	</table>
     </div>
-
-<style>
-.hed{padding-left:10px; font-weight:bolder; color:#960;}
-</style>
-
-<script type="text/javascript">
-jQuery(document).ready(function($)
-{
-	$("#table-1").dataTable({
-		"sPaginationType": "bootstrap",
-		"aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-		"bStateSave": true
-	});
-	
-	$(".dataTables_wrapper select").select2({
-		minimumResultsForSearch: -1
-	});
-});
-</script>
-
-<link rel="stylesheet" href="../../vishnu/js/select2/select2-bootstrap.css"  id="style-resource-1">
-<link rel="stylesheet" href="../../vishnu/js/select2/select2.css"  id="style-resource-2">
-<script src="../../vishnu/js/jquery.dataTables.min.js" id="script-resource-7"></script>
-<script src="../../vishnu/js/dataTables.bootstrap.js" id="script-resource-8"></script>
-<script src="../../vishnu/js/select2/select2.min.js" id="script-resource-9"></script>
-
 
 

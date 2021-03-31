@@ -33,7 +33,7 @@ if (isset($_POST['invoice'])) {
   echo "<meta http-equiv='refresh' content='0; url=index.php?vis=unpaid_trainer'>";
     
 }
- $query2 = "select * from card ";
+ $query2 = "select * from card where branch_id = '$_SESSION[branch_id]' ";
  //echo $query2;
  $result2 = mysqli_query($con, $query2);
  if (mysqli_affected_rows($con) != 0) {

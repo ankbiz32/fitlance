@@ -2,6 +2,7 @@
 .hed{padding-left:10px; font-weight:bolder; color:#960;}
 a {color: #2652a5;}
 </style>
+	<a href="index.php?vis=view_staff" class="btn btn-default">← Back</a> <br> <br>
 	<?php 
 	if (isset($_POST['name'])) { ?>
 	<b>Staff Details of : -  <?php
@@ -64,7 +65,7 @@ a {color: #2652a5;}
 	?></b>
 	<hr />
 
-	<div class="table-responsive">
+	<div class="table-responsive" style="">
 	<table class="table table-bordered datatable" id="table-1">
 		<thead>
 			<tr>
@@ -74,6 +75,7 @@ a {color: #2652a5;}
 				<th>Total</th>
 				<th>Paid / Balance</th>
 				<th>Payment Method</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -92,8 +94,13 @@ a {color: #2652a5;}
 					echo "<td>" . $date3 . "</td>";
 					echo "<td>" . $row['total'] . "</td>";
 					echo "<td>" . $row['paid'] . " / " . $row['paybalance'] . "</td>";
-					echo "<td>" . $row['payment_method']  . "</td></tr>";
+					echo "<td>" . $row['payment_method']  . "</td>";
 				$sno++;
+					echo "<td>
+						<form action='?vis=edit_staffpay' method='post'><input type='hidden' name='name' value='" . $row['id'] . "'/><input style='color:black' type='submit' value='Edit payment ' class='btn btn-warning btn-sm'/></form>
+						<form action='staff_invoice.php' method='post'><input type='hidden' name='staff_id' value='" . $staffid . "'/><input type='hidden' name='id' value='" . $row['id'] . "'/><input type='submit' value='Print Invoice ' class='btn btn-info btn-sm'/></form>
+					</td></tr>";
+
 				$msgid = 0;
 				}
 			}

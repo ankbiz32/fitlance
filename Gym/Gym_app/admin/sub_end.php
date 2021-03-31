@@ -1,6 +1,4 @@
-﻿<style>
-.hed{padding-left:10px; font-weight:bolder; color:#960;}
-</style>
+﻿
     <?php
 	$months = array(1 =>'January',2 =>'February',3 =>'March',4 =>'April',5 =>'May',6 =>'June',7 =>'July',8 =>'August',9 =>'September',10 =>'October',11 =>'November',12 =>'December');
 	$days = range(1,31);
@@ -11,6 +9,7 @@
 	?>
     <div class="table-responsive">
     <h4 class="hed">Ending Member Lists</h4>
+    <p class="">Filter by membership expiry date</p>
     <div class="col-sm-12" style="padding-bottom:15px;"><form method="post" action="export_ending.php"><input type="submit" name="export" class="btn btn-sm btn-success pull-right" value="Export To Excel" /></form></div>
     <hr />
 
@@ -66,7 +65,7 @@
 				<?php
 				$time    = time();
 				$newtime = $time + 864000; //10 days after current day
-				$query   = "select * from subsciption WHERE exp_time < $newtime AND renewal='yes' AND bal=0 AND expiry  BETWEEN '$from2' AND '$to2' AND is_active='1' ORDER BY expiry DESC";
+				$query   = "select * from subsciption WHERE exp_time < $newtime AND renewal='yes' AND bal=0 AND expiry  BETWEEN '$from2' AND '$to2' AND is_active='1' AND is_deleted='0' AND branch_id= '$_SESSION[branch_id]' ORDER BY expiry DESC";
 				$result  = mysqli_query($con, $query);
 				$sno     = 1;
 				if (mysqli_affected_rows($con) != 0) {
@@ -94,7 +93,7 @@
 						        echo "<td>" . $date3 . "</td>";
 						        $sno++;
 						        
-						        echo "<td><form action='deactive_member.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Active ' class='btn btn-success btn-sm pull-left'/></form><form action='?vis=make_payments' method='post'><input type='hidden' name='name' value='" . $row['mem_id'] . "'/><input type='submit' value='Renewal' class='btn btn-info'/></form></td></tr>";
+						        echo "<td><form action='deactive_member.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Make inactive ' class='btn btn-success btn-sm pull-left'/></form><form action='?vis=make_payments' method='post'><input type='hidden' name='name' value='" . $row['mem_id'] . "'/><input type='submit' value='Renewal' class='btn btn-info'/></form></td></tr>";
 						        $msgid = 0;
 						    }
 						}
@@ -124,7 +123,7 @@
 				<?php
 				$time    = time();
 				$newtime = $time + 864000;
-				$query   = "select * from subsciption WHERE exp_time < $newtime AND renewal='yes' AND bal=0 AND is_active='1' ORDER BY expiry DESC";
+				$query   = "select * from subsciption WHERE exp_time < $newtime AND renewal='yes' AND bal=0 AND is_active='1' AND is_deleted='0' AND branch_id= '$_SESSION[branch_id]' ORDER BY expiry DESC";
 				$result  = mysqli_query($con, $query);
 				$sno     = 1;
 				if (mysqli_affected_rows($con) != 0) {

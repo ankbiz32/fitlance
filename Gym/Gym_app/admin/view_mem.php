@@ -23,7 +23,7 @@ a {color: #2652a5;}
 		</thead>
 		<tbody>
 		<?php
-			$query  = "select * from subsciption where renewal='yes' AND is_active='1' ORDER BY id DESC";
+			$query  = "select * from subsciption where renewal='yes' AND is_active='1' AND is_deleted='0' AND branch_id = '$_SESSION[branch_id]' ORDER BY id DESC";
 			$result = mysqli_query($con, $query);
 		    $sno    = 1;
 			if (mysqli_affected_rows($con) != 0) {

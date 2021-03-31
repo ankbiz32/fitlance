@@ -1,18 +1,19 @@
 <?php
 require 'db_conn.php';
+session_start();
 if (isset($_POST['name'])) {
       $newid = $_POST['name'];
-	  $query  = "select * from user_data WHERE newid ='$newid'";
+	  $query  = "select * from staff_data WHERE id ='$newid'";
 	  //echo $query;
 	  $result = mysqli_query($con, $query);
       if (mysqli_affected_rows($con) == 1) {
          while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 				   $newid    = $row['newid'];
 				   $name     = $row['name'];
-				   $contact  = $row['contact'];
+				   $contact  = $row['mobile'];
 		   }
 		 }
-	 $query2 = "select * from card ";
+	 $query2 = "select * from card where branch_id = '$_SESSION[branch_id]'";
 	 //echo $query2;
      $result2 = mysqli_query($con, $query2);
      if (mysqli_affected_rows($con) != 0) {

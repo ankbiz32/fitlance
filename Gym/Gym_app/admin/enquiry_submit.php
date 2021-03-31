@@ -74,15 +74,15 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 		$birthdate = date('Y-m-d',strtotime($birthdate1));
 		$date1 = date('d-m-Y',strtotime($curr_date));
 
-        mysqli_query($con,"INSERT INTO user_data (wait,newid,name,address,zipcode,birthdate,contact,email,curr_date,landline,joining,workout_time_id,sex,activity,insert_by)VALUES('$wait','$p_id','$full_name','$address','$zipcode','$birthdate','$contact','$email','$curr_date','$landline','$joindate','$workout_time','$sex','$activity',$insert_by)");
+        mysqli_query($con,"INSERT INTO user_data (wait,newid,name,address,zipcode,birthdate,contact,email,curr_date,landline,joining,workout_time_id,sex,activity,branch_id,insert_by)VALUES('$wait','$p_id','$full_name','$address','$zipcode','$birthdate','$contact','$email','$curr_date','$landline','$joindate','$workout_time','$sex','$activity','$branch_id',$insert_by)");
 		//print_r($_POST);
 		$total = $total - $dis;
 		$expiry = $expiry ;
 		$expiry1 = date('d-m-Y',strtotime( $expiry ));
 		$bal = $total - $paid;
 		
-		mysqli_query($con, "INSERT INTO subsciption (mem_id,bank_id,name,sub_type,paid_date,total,paid,dis,total_dis,expiry,invoice,sub_type_name,bal,exp_time,payment_method,cheque_no,renewal,curr_date,pay_date,insert_by)
-	VALUES ('$p_id','$bank_id','$full_name','$mem_type','$joindate','$total','$paid','$dis','$total_dis','$expiry','$invoice','$name_type','$bal','$exp_time','$paymentdata','$chequeno','yes','$curr_date','$curr_date','$insert_by')");
+		mysqli_query($con, "INSERT INTO subsciption (mem_id,bank_id,name,sub_type,paid_date,total,paid,dis,total_dis,expiry,invoice,sub_type_name,bal,exp_time,payment_method,cheque_no,renewal,curr_date,pay_date,branch_id,insert_by)
+	VALUES ('$p_id','$bank_id','$full_name','$mem_type','$joindate','$total','$paid','$dis','$total_dis','$expiry','$invoice','$name_type','$bal','$exp_time','$paymentdata','$chequeno','yes','$curr_date','$curr_date','$branch_id','$insert_by')");
 	
 	    mysqli_query($con, "INSERT INTO payment (mem_id,bank_id,name,sub_type,total,paid,dis,total_dis,expiry,invoice,sub_type_name,bal,payment_method,cheque_no,renewal,pay_date,insert_by)
 	VALUES ('$p_id','$bank_id','$full_name','$mem_type','$total','$paid','$dis','$total_dis','$expiry','$invoice','$name_type','$bal','$paymentdata','$chequeno','yes','$curr_date','$insert_by')");
@@ -103,7 +103,6 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
        echo "<meta http-equiv='refresh' content='0; url=index.php?vis=add_enquiry2'>";
 	}
 }else{
-
     if (isset($_POST['follow_up']) && $_POST['follow_up'] == 'submit') {
 
 		$joindate2 = $_POST['dayj'].'-'.$_POST['monthj'].'-'.$_POST['yearj'];
@@ -121,11 +120,12 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 		$landline = rtrim($_POST['landline']);
 		$insert_by = $_SESSION['id']; 
 		$comment = rtrim($_POST['comment']);
+		$branch_id = $_SESSION['branch_id'];
 		
 		$joindate = date('Y-m-d',strtotime($joindate1));
 		$birthdate = date('Y-m-d',strtotime($birthdate1));
 		$date1 = date('d-m-Y',strtotime($curr_date));
-        mysqli_query($con,"INSERT INTO follow (name,address,zipcode,birthdate,contact,email,curr_date,landline,joining,sex,comment,insert_by)VALUES('$full_name','$address','$zipcode','$birthdate','$contact','$email','$curr_date','$landline','$joindate','$sex','$comment',$insert_by)");
+        mysqli_query($con,"INSERT INTO follow (name,address,zipcode,birthdate,contact,email,curr_date,landline,joining,sex,comment,branch_id,insert_by)VALUES('$full_name','$address','$zipcode','$birthdate','$contact','$email','$curr_date','$landline','$joindate','$sex','$comment','$branch_id',$insert_by)");
 		//print_r($_POST);
 		echo "<meta http-equiv='refresh' content='0; url=index.php?vis=follow_up'>";
     } else {
@@ -133,7 +133,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
     echo "<meta http-equiv='refresh' content='0; url=index.php?vis=add_enquiry2'>";
     }
 }
- $query2 = "select * from card ";
+ $query2 = "select * from card where branch_id = '$_SESSION[branch_id]' ";
  //echo $query2;
  $result2 = mysqli_query($con, $query2);
  if (mysqli_affected_rows($con) != 0) {

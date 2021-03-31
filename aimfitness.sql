@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2021 at 01:53 PM
+-- Generation Time: Mar 31, 2021 at 12:17 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -741,7 +741,8 @@ INSERT INTO `follow` (`id`, `name`, `address`, `zipcode`, `birthdate`, `contact`
 (370, 'Test name', '', '', '1993-03-25', 7894561200, '', '2021-03-25', 0, '2021-03-25', '', '', 1, 0, 1, 0, 1),
 (371, 'afdfdf54', '', '', '1970-01-01', 7897984564, 'sdfas@sdfgsf.g', '2021-03-25', 0, '2021-03-29', 'Male', 'sdfgsdfgf werr r gr gr', 1, 0, 1, 0, 1),
 (372, 'dfgdfg', 'hrhrtrth rth', '789654', '1970-01-01', 9876544567, 'dfdf@sdgf.fg', '2021-03-25', 0, '2021-03-26', 'Male', 'tr hrthrth 4  t t t t t t t tt t t t t', 1, 0, 1, 0, 1),
-(373, 'Ankur', '', '', '1970-01-01', 8871192505, '', '2021-03-25', 0, '2021-03-25', 'Male', '2 days after', 1, 0, 0, 0, 1);
+(373, 'Ankur', '', '', '1970-01-01', 8871192505, '', '2021-03-25', 0, '2021-03-25', 'Male', '2 days after', 1, 0, 0, 0, 1),
+(374, 'Rest', '', '', '1970-01-01', 6549873211, 'zxdcsd@fsg.fg', '2021-03-30', 0, '2021-03-30', 'Male', ' ergr gr ergrg', 2, 0, 0, 0, 5);
 
 -- --------------------------------------------------------
 
@@ -2131,7 +2132,10 @@ INSERT INTO `payment` (`id`, `mem_id`, `invoice`, `bank_id`, `name`, `sub_type`,
 (1296, 1294, '160473564nz', 0, 'MANPREET KAUR', 'PXHAWLOV', '2022-01-16', 9000, 9000, '06000', '', 'yearly (FEMALE)', 0, 'cash', '', 'yes', '2021-03-18', 1, 0, 1),
 (1297, 1172, '10513285932', 0, 'SUNAINA SABHLOK', 'PXHAWLOV', '2021-11-01', 15000, 6000, '0', '', 'yearly (FEMALE)', 9000, 'cash', '', 'no', '2021-03-20', 1, 0, 1),
 (1298, 410, '59134725nmq', 0, 'DR.RAZA KHAN', 'VJWUHPDQ', '2020-05-28', 14000, 11000, '6000', '', 'Yearly (MALE)', 0, '', '', 'no', '2021-03-20', 1, 0, 1),
-(1299, 830, '81424279si7', 0, 'SIDDHARTH DHADIWAL', 'VJWUHPDQ', '2021-01-29', 20000, 10000, '10000', '', 'Yearly (MALE)', 0, 'cash', '', 'no', '2021-03-22', 1, 0, 1);
+(1299, 830, '81424279si7', 0, 'SIDDHARTH DHADIWAL', 'VJWUHPDQ', '2021-01-29', 20000, 10000, '10000', '', 'Yearly (MALE)', 0, 'cash', '', 'no', '2021-03-22', 1, 0, 1),
+(1301, 1295, '17098188az3', 0, 'testing123', 'FZPTYUVX', '2021-07-30', 7000, 4000, '2000', '', '3M + 1M OFFER', 3000, 'cash', '', 'yes', '2021-03-30', 0, 0, 5),
+(1302, 1296, '17108056pak', 0, 'Test member', '', '1970-01-01', 0, 0, '', '', '', 0, '', '', 'yes', '2021-03-30', 1, 0, 5),
+(1303, 1297, '17108281w45', 0, 'ghrht', 'YFKRBHAV', '2021-04-29', 5000, 5000, '0', '', 'monthly (MALE)', 0, '', '', 'yes', '2021-03-30', 1, 0, 5);
 
 -- --------------------------------------------------------
 
@@ -2180,7 +2184,8 @@ INSERT INTO `staff_data` (`id`, `staffid`, `name`, `email`, `address`, `mobile`,
 (12, '12', 'NIKHAT PARVEEN', 'NIKHATAHMED1818@GMAIL.COM', 'NAYAPARA RAIPUR', 9074440192, 'Female', '24', '2', '2018-10-01', '20287864816', 0, 'TATIYAPARA', 'SBIN0016155', '492013006', 1, 0, 0, 1),
 (13, '13', 'sunil walter', 'sunilwalter0786@gmail.com', 'wrs colony balaji chowk chotta para khamtarai raipur', 9131527977, 'Male', '21', '3', '2021-03-01', '20417810107', 63, 'wrs colony', 'sbin0010147', '', 1, 1, 0, 1),
 (14, '14', 'VEER', 'ramtakesonu35@gmail.com', 'JANTA COLONY GUDIYARI RAIPUR C.G', 9977618920, 'Female', '23', '3', '2019-02-21', '044610024546', 0, 'GUDIYARI RAIPUR C.G', 'BKDN0820446', '492018004', 1, 1, 0, 1),
-(15, '15', 'sati baghmar', 'satisati952@gmail.com', 'maha mai para purani basti raipur c,g', 9753258924, 'Female', '28', '3', '2019-02-21', '148510032759', 0, 'PACHPEDI NAKA RAIOUR C.G', 'BKDN0821485', '821485', 1, 1, 0, 1);
+(15, '15', 'sati baghmar', 'satisati952@gmail.com', 'maha mai para purani basti raipur c,g', 9753258924, 'Female', '28', '3', '2019-02-21', '148510032759', 0, 'PACHPEDI NAKA RAIOUR C.G', 'BKDN0821485', '821485', 1, 1, 0, 1),
+(16, '16', 'New test', '789@789.com', 'fhg', 7897897897, 'Male', '32', '2', '2021-03-30', '', 0, '', '', '', 1, 1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -2205,6 +2210,16 @@ CREATE TABLE `staff_pay` (
   `is_deleted` tinyint(1) NOT NULL DEFAULT 0 COMMENT '1=>deleted/0=>not deleted',
   `insert_by` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `staff_pay`
+--
+
+INSERT INTO `staff_pay` (`id`, `staff_id`, `name`, `paid_date`, `total`, `paid`, `invoice`, `payment_method`, `cheque_no`, `bank_id`, `paybalance`, `branch_id`, `is_active`, `is_deleted`, `insert_by`) VALUES
+(1, '5', 'D UDAY KUMAR', '2021-03-30', 7000, 5000, '17081001m40', 'cash', '', 0, '2000', 1, 1, 0, 1),
+(2, '5', 'D UDAY KUMAR', '2021-03-30', 7000, 3500, '17081025i1g', 'cash', '', 0, '3500', 1, 1, 0, 1),
+(6, '3', 'SHIVA SINGH CHOUHAN', '2021-03-30', 6000, 4000, '17086392zb8', 'cash', '', 0, '2000', 1, 1, 0, 1),
+(7, '3', 'SHIVA SINGH CHOUHAN', '2021-03-30', 6000, 4000, '17086772stp', 'cash', '', 0, '2000', 1, 1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -2639,7 +2654,7 @@ INSERT INTO `subsciption` (`id`, `mem_id`, `bank_id`, `name`, `sub_type`, `paid_
 (509, 479, 0, 'SHEKH MINAZUDDIN', 'VJWUHPDQ', '2019-07-17', NULL, '2020-07-16', 13000, 13000, '07000', '', '63550072idj', 'Yearly (MALE)', 0, '2019-07-19', 1594837800, '', '', 'yes', '2019-07-19', 0, 1, 0, 0, 1),
 (510, 480, 0, 'VIJAY JAIN', 'VJWUHPDQ', '2019-07-18', NULL, '2020-07-17', 13000, 13000, '07000', '', '63550147b96', 'Yearly (MALE)', 0, '2019-07-19', 1594924200, '', '', 'yes', '2019-07-19', 0, 1, 0, 0, 1),
 (511, 481, 0, 'NAZMEEN AHMAD', 'PXHAWLOV', '2019-07-06', NULL, '2020-07-05', 11500, 11500, '3500', '', '63800198uzb', 'yearly (FEMALE)', 0, '2019-07-22', 1593887400, '', '', 'yes', '2019-07-22', 0, 1, 1, 0, 1),
-(512, 482, 0, 'ARYA VRADGUHA', 'YFKRBHAV', '2019-07-22', NULL, '2019-08-21', 4000, 4000, '1000', '', '63800309njx', 'monthly (MALE)', 0, '2019-07-22', 1566325800, '', '', 'yes', '2019-07-22', 0, 1, 0, 0, 1),
+(512, 482, 0, 'ARYA VRADGUHA', 'YFKRBHAV', '2019-07-22', NULL, '2019-08-21', 4000, 4000, '1000', '', '63800309njx', 'monthly (MALE)', 0, '2019-07-22', 1566325800, '', '', 'yes', '2019-07-22', 0, 1, 0, 1, 1),
 (513, 483, 0, 'PREETI SURANA', 'DKRNYIHL', '2019-07-22', NULL, '2019-10-20', 7500, 7500, '0', '', '63800403dtn', 'quaterly (FEMALE)', 0, '2019-07-22', 1571509800, 'cash', '', 'yes', '2019-07-22', 0, 1, 0, 0, 1),
 (514, 484, 0, 'KRISHNA PRAJAPATI', 'VJWUHPDQ', '2019-06-13', NULL, '2020-06-12', 11000, 11000, '9000', '', '63800629hf9', 'Yearly (MALE)', 0, '2019-07-22', 1591900200, 'cash', '', 'yes', '2019-07-22', 0, 1, 0, 0, 1),
 (515, 485, 0, 'RASHMI MISHRA', 'PXHAWLOV', '2019-06-13', NULL, '2020-06-12', 11000, 11000, '04000', '', '63800725sjl', 'yearly (FEMALE)', 0, '2019-07-22', 1591900200, 'RTGS', '', 'yes', '2019-07-22', 0, 1, 0, 0, 1),
@@ -3560,7 +3575,10 @@ INSERT INTO `subsciption` (`id`, `mem_id`, `bank_id`, `name`, `sub_type`, `paid_
 (1440, 1291, 0, 'YUGAL KURREY', 'VJWUHPDQ', '2020-11-14', NULL, '2021-11-14', 10000, 10000, '010000', '', '15990282xt2', 'Yearly (MALE)', 0, '2021-03-17', 1636828200, 'cash', '', 'yes', '2021-03-17', 0, 1, 1, 0, 1),
 (1441, 1292, 0, 'DR. AFTAB', 'VJWUHPDQ', '2020-12-12', NULL, '2021-12-12', 12000, 12000, '08000', '', '16035099vn2', 'Yearly (MALE)', 0, '2021-03-18', 1639247400, 'card pay', '', 'yes', '2021-03-18', 0, 1, 1, 0, 1),
 (1442, 1293, 0, 'SAURABH SAO', 'VJWUHPDQ', '2020-11-10', NULL, '2021-11-10', 12000, 12000, '08000', '', '16037498z41', 'Yearly (MALE)', 0, '2021-03-18', 1636482600, 'cash', '', 'yes', '2021-03-18', 0, 1, 1, 0, 1),
-(1444, 1294, 0, 'MANPREET KAUR', 'PXHAWLOV', '2021-01-16', NULL, '2022-01-16', 9000, 9000, '06000', '', '160473564nz', 'yearly (FEMALE)', 0, '2021-03-18', 1642271400, 'cash', '', 'yes', '2021-03-18', 0, 1, 1, 0, 1);
+(1444, 1294, 0, 'MANPREET KAUR', 'PXHAWLOV', '2021-01-16', NULL, '2022-01-16', 9000, 9000, '06000', '', '160473564nz', 'yearly (FEMALE)', 0, '2021-03-18', 1642271400, 'cash', '', 'yes', '2021-03-18', 0, 1, 1, 0, 1),
+(1446, 1295, 0, 'testing123', 'FZPTYUVX', '2021-04-01', NULL, '2021-07-30', 7000, 4000, '2000', '', '17098188az3', '3M + 1M OFFER', 3000, '2021-03-30', 1627583400, 'cash', '', 'yes', '2021-03-30', 0, 2, 0, 1, 5),
+(1447, 1296, 0, 'Test member', '', '2021-03-30', NULL, '1970-01-01', 0, 0, '', '', '17108056pak', '', 0, '2021-03-30', 1617042600, '', '', 'yes', '2021-03-30', 0, 2, 1, 0, 5),
+(1448, 1297, 0, 'ghrht', 'YFKRBHAV', '2021-03-30', NULL, '2021-04-29', 5000, 5000, '0', '', '17108281w45', 'monthly (MALE)', 0, '2021-03-30', 1619634600, '', '', 'yes', '2021-03-30', 0, 2, 1, 0, 5);
 
 -- --------------------------------------------------------
 
@@ -3630,7 +3648,8 @@ INSERT INTO `trainer` (`id`, `trainer_id`, `trainer_name`, `member_id`, `member_
 (15, 14, 'VEER', '1289', 'BHUVI BAJAJ', 'MONTHLY', '01-03-2021', '31-03-2021', '3', 6000, 40, 2400, 3600, '2021-03-20', '162393895gj', 1, 1, 0, 0),
 (16, 14, 'VEER', '1289', 'BHUVI BAJAJ', 'MONTHLY', '01-03-2021', '31-03-2021', '3', 6000, 40, 2400, 3600, '2021-03-20', '16240612se4', 1, 1, 0, 0),
 (17, 14, 'VEER', '1289', 'BHUVI BAJAJ', 'MONTHLY', '01-03-2021', '31-03-2021', '3', 6000, 40, 2400, 3600, '2021-03-20', '16240748vrg', 1, 1, 0, 0),
-(18, 14, 'VEER', '1289', 'BHUVI BAJAJ', 'MONTHLY', '01-03-2021', '31-03-2021', '3', 6000, 60, 3600, 2400, '2021-03-20', '16240957ihf', 1, 1, 0, 0);
+(18, 14, 'VEER', '1289', 'BHUVI BAJAJ', 'MONTHLY', '01-03-2021', '31-03-2021', '3', 6000, 60, 3600, 2400, '2021-03-20', '16240957ihf', 1, 1, 0, 0),
+(19, 14, 'VEER', '1289', 'BHUVI BAJAJ', 'MONTHLY', '01-03-2021', '19-04-2021', '3', 6000, 30, 1800, 4200, '2021-03-30', '1709173382y', 1, 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -3698,7 +3717,7 @@ INSERT INTO `trainer_pay` (`id`, `member_id`, `member_name`, `staff_id`, `staff_
 (279, 1021, 'BAL MUKUND GIDWANI', '3', 'SHIVA SINGH CHOUHAN', 'NFTXPCZD', 0, '2021-03-01', '2021-03-01', '2021-03-31', 'cash', '', 4000, 0, '153778693bs', '4000', '2021-03-31', 'no', 1617129000, '0000-00-00', 1, 1, 0, 1),
 (280, 1135, 'LAXMI PRIYA', '3', 'SHIVA SINGH CHOUHAN', 'NFTXPCZD', 0, '2021-03-06', '2021-03-06', '2021-04-05', 'cash', '', 4000, 0, '15377973qvk', '4000', '2021-04-05', 'no', 1617561000, '0000-00-00', 1, 1, 0, 1),
 (281, 805, 'NIKITA WADHWANI', '3', 'SHIVA SINGH CHOUHAN', 'NFTXPCZD', 0, '2021-03-01', '2021-03-01', '2021-03-31', 'cash', '', 4000, 4000, '15378027s25', '0', '2021-03-31', 'no', 1617129000, '0000-00-00', 1, 1, 0, 1),
-(282, 951, 'PRATIBHA TIRTHANI', '3', 'SHIVA SINGH CHOUHAN', 'NFTXPCZD', 0, '2021-03-10', '2021-03-10', '2021-04-09', 'cash', '', 6000, 3000, '15378066r5y', '3000', '2021-04-09', 'no', 1617906600, '0000-00-00', 1, 1, 0, 1),
+(282, 951, 'PRATIBHA TIRTHANI', '3', 'SHIVA SINGH CHOUHAN', 'NFTXPCZD', 0, '2021-03-10', '2021-03-10', '2021-04-09', '', '', 6000, 6000, '15378066r5y', '0', '2021-04-09', 'no', 1617906600, '2021-03-01', 1, 1, 0, 1),
 (283, 1194, 'SAHITYA  LALWANI', '7', 'MOHIT RAUT', 'NFTXPCZD', 0, '2021-03-01', '2021-03-01', '2021-03-31', 'cash', '', 4000, 0, '153783509pi', '4000', '2021-03-31', 'yes', 1617129000, '0000-00-00', 1, 1, 0, 1),
 (284, 1220, 'TEJAS CHANNAWAR', '7', 'MOHIT RAUT', 'NFTXPCZD', 0, '2021-03-01', '2021-03-01', '2021-03-31', 'cash', '', 5000, 0, '15378411a0m', '5000', '2021-03-31', 'yes', 1617129000, '0000-00-00', 1, 1, 0, 1),
 (285, 983, 'PARTH AGRAWAL', '7', 'MOHIT RAUT', 'NFTXPCZD', 0, '2021-03-01', '2021-03-01', '2021-03-31', 'cash', '', 4000, 0, '153784417hx', '4000', '2021-03-31', 'no', 1617129000, '0000-00-00', 1, 1, 0, 1),
@@ -3760,9 +3779,9 @@ INSERT INTO `trainer_pay` (`id`, `member_id`, `member_name`, `staff_id`, `staff_
 (342, 255, 'mahesh sir', '13', 'sunil walter', 'NFTXPCZD', 0, '2021-03-10', '2021-03-10', '2021-04-09', 'cash', '', 0, 0, '15896773lui', '0', '2021-04-09', 'yes', 1617906600, '0000-00-00', 1, 1, 0, 1),
 (343, 1288, 'GYANI', '13', 'sunil walter', 'NFTXPCZD', 0, '2021-02-05', '2021-02-05', '2021-03-07', 'cash', '', 0, 0, '15897689s8u', '0', '2021-03-07', 'yes', 1615055400, '0000-00-00', 1, 1, 0, 1),
 (344, 1011, 'KHUSHMITA PANDHER', '3', 'SHIVA SINGH CHOUHAN', 'NFTXPCZD', 0, '2021-03-01', '2021-03-01', '2021-03-31', 'cash', '', 0, 0, '15960490lm5', '0', '2021-03-31', 'yes', 1617129000, '0000-00-00', 1, 1, 0, 1),
-(347, 1292, 'DR. AFTAB', '3', 'SHIVA SINGH CHOUHAN', 'NFTXPCZD', 0, '2021-03-20', '2021-03-20', '2021-04-19', 'cash', '', 6000, 0, '16220873eaw', '6000', '2021-04-19', 'no', 1618770600, '0000-00-00', 1, 1, 0, 1),
+(347, 1292, 'DR. AFTAB', '3', 'SHIVA SINGH CHOUHAN', 'NFTXPCZD', 0, '2021-03-20', '2021-03-20', '2021-04-19', 'cash', '', 6000, 6000, '16220873eaw', '0', '2021-04-19', 'no', 1618770600, '2021-03-10', 1, 1, 0, 1),
 (348, 1292, 'DR. AFTAB', '3', 'SHIVA SINGH CHOUHAN', 'NFTXPCZD', 0, '2021-03-20', '2021-03-20', '2021-04-19', 'cash', '', 5000, 0, '16225710eqm', '5000', '2021-04-19', 'no', 1618770600, '0000-00-00', 1, 1, 0, 1),
-(350, 1289, 'BHUVI BAJAJ', '14', 'VEER', 'NFTXPCZD', 0, '2021-03-01', '2021-03-01', '2021-03-31', 'cash', '', 6000, 5000, '16233684o34', '1000', '2021-04-19', 'yes', 2592000, '0000-00-00', 1, 1, 0, 1);
+(350, 1289, 'BHUVI BAJAJ', '14', 'VEER', 'NFTXPCZD', 0, '2021-03-01', '2021-03-01', '2021-03-31', 'cash', '', 6000, 6000, '16233684o34', '0', '2021-04-29', 'yes', 2592000, '0000-00-00', 1, 1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -5064,7 +5083,10 @@ INSERT INTO `user_data` (`id`, `wait`, `newid`, `name`, `address`, `zipcode`, `b
 (1291, 'no', 1291, 'YUGAL KURREY', 'Raipur', '492001', '1990-11-19', 8770062256, '', '2021-03-17', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-11-14', 1, 'Male', 'FITNESS', 1, 1, 0, 1),
 (1292, 'no', 1292, 'DR. AFTAB', 'Raipur', '492001', '2021-03-17', 8889848471, '', '2021-03-18', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-12-12', 1, 'Male', 'FITNESS', 1, 1, 0, 1),
 (1293, 'no', 1293, 'SAURABH SAO', 'Raipur', '492001', '2021-03-18', 9993899966, '', '2021-03-18', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-11-10', 1, 'Male', 'FITNESS', 1, 1, 0, 1),
-(1294, 'no', 1294, 'MANPREET KAUR', 'Raipur', '492001', '1988-08-10', 8871887999, '', '2021-03-18', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-01-16', 1, 'Female', 'FITNESS', 1, 1, 0, 1);
+(1294, 'no', 1294, 'MANPREET KAUR', 'Raipur', '492001', '1988-08-10', 8871887999, '', '2021-03-18', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-01-16', 1, 'Female', 'FITNESS', 1, 1, 0, 1),
+(1295, 'no', 1295, 'testing123', 'Budhapara', '492001', '1994-02-18', 8888888888, 'tester@gmail.cpm', '2021-03-30', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-04-01', 2, 'Male', '', 2, 1, 0, 5),
+(1296, 'no', 1296, 'Test member', '', '', '2021-03-30', 7894561231, 'ankur@gmail.com', '2021-03-30', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-03-30', 0, '', '', 2, 1, 0, 5),
+(1297, 'no', 1297, 'ghrht', '', '', '2021-03-30', 7897897897, '', '2021-03-30', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-03-30', 0, '', '', 2, 1, 0, 5);
 
 -- --------------------------------------------------------
 
@@ -7081,7 +7103,22 @@ INSERT INTO `user_sessions` (`id`, `login_id`, `name`, `role_id`, `branch_id`, `
 (1987, 'admin_tsr', 'Administrate', 1, 2, '2021-03-27 16:57:29', '2021-03-27 16:57:29', 1, 0),
 (1988, 'admin_tsr', 'Administrate', 1, 2, '2021-03-27 16:57:38', '2021-03-27 16:57:38', 1, 0),
 (1989, 'admin', 'AimFitness Admin', 1, 1, '2021-03-27 17:05:02', '2021-03-27 17:05:02', 1, 0),
-(1990, 'admin_tsr', 'TSR Admin', 1, 2, '2021-03-27 17:05:22', '2021-03-27 17:05:22', 1, 0);
+(1990, 'admin_tsr', 'TSR Admin', 1, 2, '2021-03-27 17:05:22', '2021-03-27 17:05:22', 1, 0),
+(1991, 'admin', 'AimFitness Admin', 1, 1, '2021-03-30 10:31:53', '2021-03-30 10:31:53', 1, 0),
+(1992, 'admin_tsr', 'TSR Admin', 1, 2, '2021-03-30 12:40:01', '2021-03-30 12:40:01', 1, 0),
+(1993, 'admin', 'AimFitness Admin', 1, 1, '2021-03-30 12:40:27', '2021-03-30 12:40:27', 1, 0),
+(1994, 'admin_tsr', 'TSR Admin', 1, 2, '2021-03-30 12:40:46', '2021-03-30 12:40:46', 1, 0),
+(1995, 'admin', 'AimFitness Admin', 1, 1, '2021-03-30 12:41:43', '2021-03-30 12:41:43', 1, 0),
+(1996, 'admin_tsr', 'TSR Admin', 1, 2, '2021-03-30 13:19:57', '2021-03-30 13:19:57', 1, 0),
+(1997, 'admin', 'AimFitness Admin', 1, 1, '2021-03-30 13:25:50', '2021-03-30 13:25:50', 1, 0),
+(1998, 'admin_tsr', 'TSR Admin', 1, 2, '2021-03-30 13:25:58', '2021-03-30 13:25:58', 1, 0),
+(1999, 'admin', 'AimFitness Admin', 1, 1, '2021-03-30 13:31:34', '2021-03-30 13:31:34', 1, 0),
+(2000, 'admin_tsr', 'TSR Admin', 1, 2, '2021-03-30 13:33:19', '2021-03-30 13:33:19', 1, 0),
+(2001, 'admin', 'AimFitness Admin', 1, 1, '2021-03-30 14:43:14', '2021-03-30 14:43:14', 1, 0),
+(2002, 'admin', 'AimFitness Admin', 1, 1, '2021-03-31 10:58:52', '2021-03-31 10:58:52', 1, 0),
+(2003, '', '', 0, 0, '2021-03-31 13:01:12', '2021-03-31 13:01:12', 1, 0),
+(2004, 'admin', 'AimFitness Admin', 1, 1, '2021-03-31 13:01:18', '2021-03-31 13:01:18', 1, 0),
+(2005, 'admin', 'AimFitness Admin', 1, 1, '2021-03-31 13:13:07', '2021-03-31 13:13:07', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -7339,7 +7376,7 @@ ALTER TABLE `facility`
 -- AUTO_INCREMENT for table `follow`
 --
 ALTER TABLE `follow`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=374;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=375;
 
 --
 -- AUTO_INCREMENT for table `freeze`
@@ -7363,25 +7400,25 @@ ALTER TABLE `mem_types`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1301;
+  MODIFY `id` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1304;
 
 --
 -- AUTO_INCREMENT for table `staff_data`
 --
 ALTER TABLE `staff_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `staff_pay`
 --
 ALTER TABLE `staff_pay`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `subsciption`
 --
 ALTER TABLE `subsciption`
-  MODIFY `id` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1446;
+  MODIFY `id` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1449;
 
 --
 -- AUTO_INCREMENT for table `time_table`
@@ -7393,7 +7430,7 @@ ALTER TABLE `time_table`
 -- AUTO_INCREMENT for table `trainer`
 --
 ALTER TABLE `trainer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `trainer_pay`
@@ -7417,13 +7454,13 @@ ALTER TABLE `transfer_member`
 -- AUTO_INCREMENT for table `user_data`
 --
 ALTER TABLE `user_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1295;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1298;
 
 --
 -- AUTO_INCREMENT for table `user_sessions`
 --
 ALTER TABLE `user_sessions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1991;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2006;
 
 --
 -- AUTO_INCREMENT for table `visitor`

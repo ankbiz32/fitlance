@@ -1,5 +1,6 @@
 <?php
 require 'db_conn.php';
+session_start();
 if (isset($_POST['name'])) {
     $invoice = $_POST['name'];
     $query = "select * from trainer WHERE invoice='$invoice'";
@@ -31,7 +32,7 @@ if (isset($_POST['name'])) {
     echo "<meta http-equiv='refresh' content='0; url=index.php?vis=view_mem'>";
     
 }
- $query2 = "select * from card ";
+ $query2 = "select * from card where branch_id = '$_SESSION[branch_id]' ";
  //echo $query2;
  $result2 = mysqli_query($con, $query2);
  if (mysqli_affected_rows($con) != 0) {

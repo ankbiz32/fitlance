@@ -46,7 +46,7 @@
 			  echo "<td>" . $row['age'] . " / " . $row['gender'] . "</td>";
 			  echo "<td>" . $row3['name'] . "</td>";
 			  echo "<td>" . $row11['name'] . "</td>";
-			  echo "<td><form action='id_invoicestaff.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Print ID Card' class='btn btn-info btn-sm pull-left'/></form></td></tr>";
+			  echo "<td><form action='id_invoicestaff.php' method='post'><input type='hidden' name='name' value='" . $row['id'] . "'/><input type='submit' value='Print ID Card' class='btn btn-info btn-sm pull-left'/></form></td></tr>";
 			}
 		  }
       ?>

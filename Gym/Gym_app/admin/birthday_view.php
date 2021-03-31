@@ -22,7 +22,7 @@ color:#960;
 	</thead>
 	<tbody>
 	<?php
-	$query  = "select * from user_data WHERE MONTH(birthdate) = MONTH(NOW()) AND DAY(birthdate) = DAY(NOW())";
+	$query  = "select * from user_data WHERE MONTH(birthdate) = MONTH(NOW()) AND DAY(birthdate) = DAY(NOW()) AND branch_id = '$_SESSION[branch_id]'";
 	//echo $query;
 	$result = mysqli_query($con, $query);
 	$sno    = 1;

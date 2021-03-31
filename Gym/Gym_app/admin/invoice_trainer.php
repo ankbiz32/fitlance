@@ -204,7 +204,7 @@ if (isset($_POST['name'])) {
 			<address style="font-size:16px;">
 				<h2>Customer Signature</h2>
 			</address>
-		<span><p>For Global Fun & Fitness</p><p align="center"><?php echo $name_company; ?></p></span>	 
+		<span><p>For  <?php echo $name_company; ?></p></span>	 
     </header>
 		<br>
 		<center><h3>Website : <b><?php echo $website;?></b></h3></center>

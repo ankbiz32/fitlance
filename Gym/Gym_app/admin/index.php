@@ -13,8 +13,12 @@ include('vish_info/head.php');
             <ul class="list-inline links-list pull-right">
 
                 <li>
-                
-                    <img src="../upload/LOGO_AIM_FITNESS_1536385051.png" alt="Aim Fitness" style="width:30px;"/>
+                    <?php if($_SESSION['branch_id']==1){?>
+                        <img src="../upload/LOGO_AIM_FITNESS_1536385051.png" alt="Aim Fitness" style="width:30px;"/>
+                    <?php }
+                    else{ ?>
+                        <img src="../upload/tsr_logo_header.png" alt="TSR" style="width:40px;margin-right:10px"/>
+                    <?php }?>
                     Welcome <?php echo $_SESSION['full_name']; ?> 
                 </li>					
             

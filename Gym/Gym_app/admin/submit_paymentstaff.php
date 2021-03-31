@@ -1,6 +1,7 @@
 <?php
 require 'db_conn.php';
 page_protect();
+session_start();
 if (isset($_POST['staff_id'])) {
 	function getRandomWord($len = 3)
 		{
@@ -49,7 +50,7 @@ if (isset($_POST['staff_id'])) {
 		echo "<head><script>alert('Payment NOT Added, Check Again');</script></head></html>";
 		echo "<meta http-equiv='refresh' content='0; url=index.php?vis=view_staff'>";
     }
- $query2 = "select * from card ";
+ $query2 = "select * from card where branch_id = '$_SESSION[branch_id]' ";
  //echo $query2;
  $result2 = mysqli_query($con, $query2);
  if (mysqli_affected_rows($con) != 0) {
@@ -251,7 +252,7 @@ if (isset($_POST['staff_id'])) {
 			<address style="font-size:16px;">
 				<h2>Customer Signature</h2>
 			</address>
-			<span><p>For Global Fun & Fitness</p><p align="center"><?php echo $name_company; ?></p></span>
+			<span><p align="center">For <?php echo $name_company; ?></p></span>
 		</header>
 		<br>
 		<center><h3>Website : <b><?php echo $website;?></b></h3></center>

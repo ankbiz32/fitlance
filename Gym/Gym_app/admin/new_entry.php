@@ -112,7 +112,7 @@ $currentYear = date('Y');
 	</div>
     <div class="row">
       <div class="col-md-6 form-group"><label for="field-1" class="col-sm-3 control-label">Membership Type :</label>					
-        <div class="col-sm-7"><select name="mem_type" id="plan" onchange="plan_Details(this.value)"  data-rule-required="true" class="form-control">
+        <div class="col-sm-7"><select name="mem_type" id="plan" onchange="plan_Details(this.value)"  data-rule-required="true" required='required' class="form-control">
 				<option value="">-- Please select --</option>
 				<?php
 					$query = "select * from mem_types";
@@ -144,15 +144,15 @@ $currentYear = date('Y');
 			<div class="col-sm-9"><input type="text" name="total" id="total" value="<?php echo $rate;?>" class="form-control" readonly></div>
 		</div>
 		<div class="col-md-6 form-group"><label for="field-1" class="col-sm-3 control-label">Discount :</label>					
-			<div class="col-sm-9"><input type="text" name="dis" id="discount" value="<?php echo $dis;?>" class=" form-control" onKeyPress="return checkIt(event)" onblur="checkTotal()" onkeypress="checkTotal()" placeholder="Discount"></div>
+			<div class="col-sm-9"><input type="text" required name="dis" id="discount" value="<?php echo $dis;?>" class=" form-control" onKeyPress="return checkIt(event)" onblur="checkTotal()" onkeypress="checkTotal()" required placeholder="Discount"></div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-6 form-group"><label for="field-1" class="col-sm-3 control-label">Paid :</label>					
-			<div class="col-sm-9"><input type="text" name="paid" id="paid" value="<?php echo $paid;?>" class="form-control" onblur="finalTotal()" onkeypress="finalTotal()"></div>
+			<div class="col-sm-9"><input type="text" name="paid" id="paid" required value="<?php echo $paid;?>" class="form-control" onblur="finalTotal()" onkeypress="finalTotal()" required></div>
 		</div>
 		<div class="col-md-6 form-group"><label for="field-1" class="col-sm-3 control-label">Balance :</label>					
-			<div class="col-sm-9"><input type="text" name="bal" id="balance" value="<?php echo $bal;?>" class="form-control" readonly></div>
+			<div class="col-sm-9"><input type="text" required name="bal" id="balance" value="<?php echo $bal;?>" class="form-control" readonly></div>
 		</div>
 	</div>
 	<div class="row" id="insertpayment" style="display:none" >

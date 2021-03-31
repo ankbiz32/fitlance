@@ -19,7 +19,7 @@ color:#960;
 		</thead>
 		<tbody>
 		<?php
-        $query = "SELECT * FROM `follow` WHERE is_active='1' ORDER BY id DESC";
+        $query = "SELECT * FROM `follow` WHERE is_active='1' AND branch_id = '$_SESSION[branch_id]' ORDER BY id DESC";
 		$result = mysqli_query($con, $query);
 		$sno    = 1;
 			if (mysqli_affected_rows($con) != 0) {
@@ -35,12 +35,12 @@ color:#960;
 					if($status == 0){
 						echo"<td><form action='index.php?vis=add_member' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Add Member' class='btn btn-info btn-sm pull-left'/></form>
 						<form action='index.php?vis=edit_follow' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Edit' class='btn btn-warning btn-sm pull-left'/></form>
-						<form action='del_follow.php' method='post' onSubmit='return ConfirmDelete();'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Delete 'class='btn btn-danger btn-sm pull-left'/></form>
+						<form action='del_follow.php' method='post' onSubmit='return ConfirmDelete();'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' onclick='return confirm(\"Are you sure you want to delete this data?\");' value='Delete 'class='btn btn-danger btn-sm pull-left'/></form>
 						</td></tr>";
 					}else{
 						echo"<td><form action='' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Transfer Member' class='btn btn-success btn-sm pull-left'/></form>
 						<form action='index.php?vis=edit_follow' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Edit' class='btn btn-warning btn-sm pull-left'/></form>
-						<form action='del_follow.php' method='post' onSubmit='return ConfirmDelete();'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Delete 'class='btn btn-danger btn-sm pull-left'/></form>
+						<form action='del_follow.php' method='post' onSubmit='return ConfirmDelete();'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' onclick='return confirm(\"Are you sure you want to delete this data?\");' value='Delete 'class='btn btn-danger btn-sm pull-left'/></form>
 						</td></tr>";
 					}
 					$sno++; 

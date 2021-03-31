@@ -70,18 +70,19 @@ if (isset($_POST['p_name']) && isset($_POST['mem_type']) && isset($_POST['total'
 		$bank          = $_POST['bank'];
 		$paymentdata   = $_POST['paymentdata'];
 		$chequeno      = $_POST['chequeno'];
+		$branch_id      = $_SESSION['branch_id'];
 
 		$joindate  = date('Y-m-d',strtotime($joindate1));
 		$birthdate = date('Y-m-d',strtotime($birthdate1));
 		$date1     = date('d-m-Y',strtotime($curr_date));
-        mysqli_query($con,"INSERT INTO user_data (wait,newid,name,address,zipcode,birthdate,contact,email,curr_date,landline,joining,workout_time_id,sex,activity,insert_by)VALUES('$wait','$p_id','$full_name','$address','$zipcode','$birthdate','$contact','$email','$curr_date','$landline','$joindate','$workout_time','$sex','$activity',$insert_by)");
+        mysqli_query($con,"INSERT INTO user_data (wait,newid,name,address,zipcode,birthdate,contact,email,curr_date,landline,joining,workout_time_id,sex,activity,branch_id,insert_by)VALUES('$wait','$p_id','$full_name','$address','$zipcode','$birthdate','$contact','$email','$curr_date','$landline','$joindate','$workout_time','$sex','$activity','$branch_id',$insert_by)");
 		//print_r($_POST);
 		$total = $total - $dis;
 		$expiry = $expiry ;
 		$expiry1 = date('d-m-Y',strtotime( $expiry ));
 			
-	  mysqli_query($con, "INSERT INTO subsciption (mem_id,bank_id,name,sub_type,paid_date,total,paid,dis,total_dis,expiry,invoice,sub_type_name,bal,exp_time,payment_method,cheque_no,renewal,curr_date,pay_date,insert_by)
-	VALUES ('$p_id','$bank_id','$full_name','$mem_type','$joindate','$total','$paid','$dis','$total_dis','$expiry','$invoice','$name_type','$bal','$exp_time','$paymentdata','$chequeno','yes','$curr_date','$curr_date','$insert_by')");
+	  mysqli_query($con, "INSERT INTO subsciption (mem_id,bank_id,name,sub_type,paid_date,total,paid,dis,total_dis,expiry,invoice,sub_type_name,bal,exp_time,payment_method,cheque_no,renewal,curr_date,pay_date,branch_id,insert_by)
+	VALUES ('$p_id','$bank_id','$full_name','$mem_type','$joindate','$total','$paid','$dis','$total_dis','$expiry','$invoice','$name_type','$bal','$exp_time','$paymentdata','$chequeno','yes','$curr_date','$curr_date','$branch_id','$insert_by')");
 	
 	  mysqli_query($con, "INSERT INTO payment (mem_id,bank_id,name,sub_type,total,paid,dis,total_dis,expiry,invoice,sub_type_name,bal,payment_method,cheque_no,renewal,pay_date,insert_by)
 	VALUES ('$p_id','$bank_id','$full_name','$mem_type','$total','$paid','$dis','$total_dis','$expiry','$invoice','$name_type','$bal','$paymentdata','$chequeno','yes','$curr_date','$insert_by')");
@@ -119,6 +120,7 @@ if (isset($_POST['p_name']) && isset($_POST['mem_type']) && isset($_POST['total'
 			$paybalance = $total_tr - $paid_tr;
 			$cheque_no_tr = $_POST['cheque_not'];
 			$bank_id_tr = $_POST['bank_idt'];
+			$branch_id = $_SESSION['branch_id'];
 			$invoice_tr   = substr(time(), 2, 10) . getRandomWord();
 			$insert_by = $_SESSION['id'];
 			$date = date('Y-m-d',strtotime($date1));
@@ -130,8 +132,8 @@ if (isset($_POST['p_name']) && isset($_POST['mem_type']) && isset($_POST['total'
 			//$expiry = date('Y-m-d',strtotime($expiry));
 			//echo $expiry_date;
 
-			mysqli_query($con, "INSERT INTO trainer_pay (member_id,member_name,staff_id,staff_name,trainer_type_id,bank_id,paid_date,join_date,payment_method,expiry_date,cheque_no,total,paid,invoice,paybalance,expiry,exp_time,insert_by)
-		        VALUES('$p_id','$full_name','$trainer_name','$name_staff','$trainer_type_id','$bank_id_tr','$date','$date','$payment_method_tr','$expiry_tr','$cheque_no_tr','$total_tr','$paid_tr','$invoice_tr','$paybalance','$expiry_tr','$exp_time_tr','$insert_by')");
+			mysqli_query($con, "INSERT INTO trainer_pay (member_id,member_name,staff_id,staff_name,trainer_type_id,bank_id,paid_date,join_date,payment_method,expiry_date,cheque_no,total,paid,invoice,paybalance,expiry,exp_time,branch_id,insert_by)
+		        VALUES('$p_id','$full_name','$trainer_name','$name_staff','$trainer_type_id','$bank_id_tr','$date','$date','$payment_method_tr','$expiry_tr','$cheque_no_tr','$total_tr','$paid_tr','$invoice_tr','$paybalance','$expiry_tr','$exp_time_tr','$branch_id','$insert_by')");
 		}
 	    echo "<head><script>alert('Member Added ,Member Id : $p_id');</script></head></html>";
 		  new_register($message,$contact);
@@ -141,7 +143,7 @@ if (isset($_POST['p_name']) && isset($_POST['mem_type']) && isset($_POST['total'
        echo "<meta http-equiv='refresh' content='0; url=index.php?vis=new_entry'>";
 	}
 }
- $query2 = "select * from card ";
+ $query2 = "select * from card where branch_id = '$_SESSION[branch_id]' ";
  //echo $query2;
  $result2 = mysqli_query($con, $query2);
  if (mysqli_affected_rows($con) != 0) {
