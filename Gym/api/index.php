@@ -1,5 +1,5 @@
 ﻿<?php
-    require '../Gym_app/admin/db_conn.php';
+    require 'db_conn.php';
     integrity_check($con);
     $mount=$_POST['func'];
     unset($_POST['func']);
