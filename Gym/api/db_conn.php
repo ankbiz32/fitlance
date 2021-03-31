@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('Asia/Calcutta'); 
 error_reporting(0);
-$host     = "localhosts"; 
+$host     = "localhost"; 
 $username = "root"; 
 $password = "";
 $db_name  = "aimfitness";
