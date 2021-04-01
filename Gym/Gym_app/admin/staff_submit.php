@@ -27,8 +27,9 @@ if (isset($_POST['name'])) {
 	  $ifsc_code = rtrim($_POST['ifsc_code']);
 	  $micr_code = rtrim($_POST['micr_code']);
 	  $insert_by = $_SESSION['id'];
+	  $branch_id = $_SESSION['branch_id'];
 	  $date = date('Y-m-d',strtotime($date1));
-	  mysqli_query($con, "INSERT INTO staff_data (staffid,name,email,address,mobile,gender,designation,age,date,bank_name,bank_acc,branch_name,ifsc_code,micr_code,insert_by)VALUES('$staffid','$name','$email','$address','$mobile','$gender','$designation','$age','$date','$bank_name','$bank_acc','$branch_name','$ifsc_code','$micr_code','$insert_by')");
+	  mysqli_query($con, "INSERT INTO staff_data (staffid,name,email,address,mobile,gender,designation,age,date,bank_name,bank_acc,branch_name,ifsc_code,micr_code,branch_id,insert_by)VALUES('$staffid','$name','$email','$address','$mobile','$gender','$designation','$age','$date','$bank_name','$bank_acc','$branch_name','$ifsc_code','$micr_code','$branch_id','$insert_by')");
 	  //print_r($_POST);
 	  echo "<head><script>alert('Staff Name Added , Staff Name :$name');</script></head></html>";
 	  echo "<meta http-equiv='refresh' content='0; url=index.php?vis=staff_details'>";

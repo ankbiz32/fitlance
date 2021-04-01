@@ -8,7 +8,8 @@ if (isset($_POST['staff_type_id'])) {
     $time   = rtrim($_POST['time']);
     $staff_type_id = $_POST['staff_type_id'];
     $insert_by = $_SESSION['id'];
-    mysqli_query($con, "INSERT INTO trainer_types (staff_type_id,name,day,time,insert_by)VALUES('$staff_type_id','$name','$day','$time','$insert_by')");
+    $branch_id = $_SESSION['branch_id'];
+    mysqli_query($con, "INSERT INTO trainer_types (staff_type_id,name,day,time,insert_by,branch_id)VALUES('$staff_type_id','$name','$day','$time','$insert_by','$branch_id')");
     //print_r($_POST);
     echo "<meta http-equiv='refresh' content='0; url=index.php?vis=view_tranier_plan'>";
 } else {

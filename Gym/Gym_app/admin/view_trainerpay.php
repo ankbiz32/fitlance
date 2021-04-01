@@ -29,7 +29,7 @@ color:#960;
 		</thead>
 		<tbody>
 		<?php
-		$query  = "select * from trainer ORDER BY id DESC";
+		$query  = "select * from trainer where branch_id = '$_SESSION[branch_id]' ORDER BY id DESC";
 		//echo $query;
 		$result = mysqli_query($con, $query);
 		$sno    = 1;

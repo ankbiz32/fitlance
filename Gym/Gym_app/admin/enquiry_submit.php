@@ -73,6 +73,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 		$joindate = date('Y-m-d',strtotime($joindate1));
 		$birthdate = date('Y-m-d',strtotime($birthdate1));
 		$date1 = date('d-m-Y',strtotime($curr_date));
+		$branch_id= $_SESSION['branch_id'];
 
         mysqli_query($con,"INSERT INTO user_data (wait,newid,name,address,zipcode,birthdate,contact,email,curr_date,landline,joining,workout_time_id,sex,activity,branch_id,insert_by)VALUES('$wait','$p_id','$full_name','$address','$zipcode','$birthdate','$contact','$email','$curr_date','$landline','$joindate','$workout_time','$sex','$activity','$branch_id',$insert_by)");
 		//print_r($_POST);
@@ -80,6 +81,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 		$expiry = $expiry ;
 		$expiry1 = date('d-m-Y',strtotime( $expiry ));
 		$bal = $total - $paid;
+		$branch_id= $_SESSION['branch_id'];
 		
 		mysqli_query($con, "INSERT INTO subsciption (mem_id,bank_id,name,sub_type,paid_date,total,paid,dis,total_dis,expiry,invoice,sub_type_name,bal,exp_time,payment_method,cheque_no,renewal,curr_date,pay_date,branch_id,insert_by)
 	VALUES ('$p_id','$bank_id','$full_name','$mem_type','$joindate','$total','$paid','$dis','$total_dis','$expiry','$invoice','$name_type','$bal','$exp_time','$paymentdata','$chequeno','yes','$curr_date','$curr_date','$branch_id','$insert_by')");

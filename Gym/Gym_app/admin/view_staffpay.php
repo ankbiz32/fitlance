@@ -97,7 +97,6 @@ a {color: #2652a5;}
 					echo "<td>" . $row['payment_method']  . "</td>";
 				$sno++;
 					echo "<td>
-						<form action='?vis=edit_staffpay' method='post'><input type='hidden' name='name' value='" . $row['id'] . "'/><input style='color:black' type='submit' value='Edit payment ' class='btn btn-warning btn-sm'/></form>
 						<form action='staff_invoice.php' method='post'><input type='hidden' name='staff_id' value='" . $staffid . "'/><input type='hidden' name='id' value='" . $row['id'] . "'/><input type='submit' value='Print Invoice ' class='btn btn-info btn-sm'/></form>
 					</td></tr>";
 

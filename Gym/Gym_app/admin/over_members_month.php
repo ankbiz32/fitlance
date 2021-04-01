@@ -66,7 +66,7 @@
 		</thead>
 		<tbody>
 		    <?php
-			$query  = "select * from user_data WHERE joining BETWEEN '$from2' AND '$to2' AND is_active='1' ORDER BY joining ASC";
+			$query  = "select * from user_data WHERE joining BETWEEN '$from2' AND '$to2' AND is_active='1' AND branch_id = '$_SESSION[branch_id]' ORDER BY joining ASC";
 			$result = mysqli_query($con, $query);
 		    $sno    = 1;
 			if (mysqli_affected_rows($con) != 0) {
@@ -126,7 +126,7 @@
 		</thead>
 		<tbody>
 		    <?php
-			$query  = "select * from user_data WHERE is_active='1' ORDER BY joining ASC";
+			$query  = "select * from user_data WHERE is_active='1' AND branch_id = '$_SESSION[branch_id]' ORDER BY joining ASC";
 			//$query  = "select * from subsciption where renewal='yes' AND is_active='1' ORDER BY id DESC";
 			$result = mysqli_query($con, $query);
 		    $sno    = 1;

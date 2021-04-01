@@ -115,7 +115,7 @@ $currentYear = date('Y');
         <div class="col-sm-7"><select name="mem_type" id="plan" onchange="plan_Details(this.value)"  data-rule-required="true" required='required' class="form-control">
 				<option value="">-- Please select --</option>
 				<?php
-					$query = "select * from mem_types";
+					$query = "select * from mem_types where branch_id = '$_SESSION[branch_id]'";
 					$result = mysqli_query($con, $query);
 					if (mysqli_affected_rows($con) != 0) {
 					  while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
@@ -222,7 +222,7 @@ $currentYear = date('Y');
 			<div class="col-sm-9"><select name="trainer_name" class="form-control chosen-select-trainer">
 				<option value="">-- Please select --</option>						
 				<?php
-				$query  = "select * from staff_data";
+				$query  = "select * from staff_data where branch_id = '$_SESSION[branch_id]'";
 				//echo $query;
 				$result = mysqli_query($con, $query);
 				if (mysqli_affected_rows($con) != 0) {
@@ -238,7 +238,7 @@ $currentYear = date('Y');
 			<div class="col-sm-9"><select name="trainer_type_id" id="trainer_type_id" data-rule-required="true" class="country form-control">
 				<option value="">-- Please select --</option>
 				<?php
-				$query = "select * from trainer_types";
+				$query = "select * from trainer_types where branch_id = '$_SESSION[branch_id]'";
 				//echo $query;
 				$result = mysqli_query($con, $query);
 				if (mysqli_affected_rows($con) != 0) {

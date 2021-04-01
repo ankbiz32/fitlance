@@ -100,7 +100,9 @@
 			  echo "<td>" . $row['total'] . " / " . $row['paid'] . "</td>";
 			  echo "<td>" . $row['invoice'] . "</td>";
 			  $sno++;
-			  echo "<td><form action='invoice_staff.php' method='post'><input type='hidden' name='name' value='" . $stafid . "'/><input type='submit' value='Print Invoice ' class='btn btn-info btn-sm pull-left'/></form><form action='del_invoicestaff.php' method='post' onSubmit='return ConfirmDelete();'><input type='hidden' name='name' value='" . $stafid . "'/><input type='submit' value='Delete Invoice ' class='btn btn-danger btn-sm pull-left'/></form></td></tr>";
+			  echo "<td><form action='invoice_staff.php' method='post'><input type='hidden' name='name' value='" . $stafid . "'/><input type='submit' value='Print Invoice ' class='btn btn-info btn-sm pull-left'/></form>
+			  <form action='?vis=edit_staffpay' method='post'><input type='hidden' name='name' value='" . $row['id'] . "'/><input style='color:black' type='submit' value='Edit payment ' class='btn btn-warning btn-sm'/></form> 
+			  <form action='del_invoicestaff.php' method='post' onSubmit='return ConfirmDelete();'><input type='hidden' name='name' value='" . $stafid . "'/><input type='submit' value='Delete Invoice ' class='btn btn-danger btn-sm pull-left'/></form></td></tr>";
 			  $stafid = 0;
 			}
 		  }

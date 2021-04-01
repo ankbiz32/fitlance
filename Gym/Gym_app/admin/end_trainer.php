@@ -65,7 +65,7 @@
 				<?php
 				$time    = time();
 				$newtime = $time + 864000;
-				$query   = "select * from trainer_pay WHERE exp_time < $newtime AND renewal='yes' AND paybalance=0 AND expiry_date  BETWEEN '$from2' AND '$to2' ORDER BY expiry DESC";
+				$query   = "select * from trainer_pay WHERE exp_time < $newtime AND renewal='yes' AND branch_id = '$_SESSION[branch_id]' AND paybalance=0 AND expiry_date  BETWEEN '$from2' AND '$to2' ORDER BY expiry DESC";
 				$result  = mysqli_query($con, $query);
 				$sno     = 1;
 				if (mysqli_affected_rows($con) != 0) {
@@ -115,7 +115,7 @@
 				<?php
 				$time    = time();
 				$newtime = $time + 864000;
-				$query   = "select * from trainer_pay WHERE exp_time < $newtime AND renewal='yes' AND paybalance=0 ORDER BY expiry_date DESC";
+				$query   = "select * from trainer_pay WHERE exp_time < $newtime AND renewal='yes' AND paybalance=0 AND branch_id = '$_SESSION[branch_id]' ORDER BY expiry_date DESC";
 				$result  = mysqli_query($con, $query);
 				$sno     = 1;
 				if (mysqli_affected_rows($con) != 0) {

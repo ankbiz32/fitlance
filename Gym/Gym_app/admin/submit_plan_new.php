@@ -6,9 +6,10 @@ if (isset($_POST['p_id'])) {
     $days    = rtrim($_POST['days']);
     $rate    = rtrim($_POST['rate']);
     $p_id = $_POST['p_id'];
+	$branch_id = $_SESSION['branch_id'];
 	$insert_by = $_SESSION['id'];
-    mysqli_query($con, "INSERT INTO mem_types (mem_type_id,name,days,rate,insert_by)
-VALUES ('$p_id','$name','$days','$rate','$insert_by')");
+    mysqli_query($con, "INSERT INTO mem_types (mem_type_id,name,days,rate,insert_by,branch_id)
+VALUES ('$p_id','$name','$days','$rate','$insert_by','$branch_id')");
     echo "<meta http-equiv='refresh' content='0; url=index.php?vis=view_plan'>";
 } else {
     echo "<head><script>alert('Profile NOT Updated, Check Again');</script></head></html>";

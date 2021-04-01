@@ -48,6 +48,7 @@ function getRandomWord($len = 3)
 	$bank_id = $_POST['bank_id'];
 	$invoice   = substr(time(), 2, 10) . getRandomWord();
 	$insert_by = $_SESSION['id'];
+	$branch_id = $_SESSION['branch_id'];
 	$date = date('Y-m-d',strtotime($date1));
 	$mod_date  = strtotime($date . "+ $day day");
 	$expiry    = date("Y-m-d", $mod_date);
@@ -57,7 +58,7 @@ function getRandomWord($len = 3)
 	//$expiry = date('Y-m-d',strtotime($expiry));
 	echo $expiry_date;
     mysqli_query($con, "UPDATE trainer_pay SET renewal='no' WHERE member_id=$member_name");
-    mysqli_query($con, "INSERT INTO trainer_pay (member_id,member_name,staff_id,staff_name,trainer_type_id,bank_id,paid_date,join_date,payment_method,expiry_date,cheque_no,total,paid,invoice,paybalance,expiry,renewal,exp_time,insert_by)VALUES('$member_name','$name_member','$trainer_name','$name_staff','$trainer_type_id','$bank_id','$date','$date','$payment_method','$expiry','$cheque_no','$total','$paid','$invoice','$paybalance','$expiry','yes','$exp_time','$insert_by')");
+    mysqli_query($con, "INSERT INTO trainer_pay (member_id,member_name,staff_id,staff_name,trainer_type_id,bank_id,paid_date,join_date,payment_method,expiry_date,cheque_no,total,paid,invoice,paybalance,expiry,renewal,exp_time,branch_id,insert_by)VALUES('$member_name','$name_member','$trainer_name','$name_staff','$trainer_type_id','$bank_id','$date','$date','$payment_method','$expiry','$cheque_no','$total','$paid','$invoice','$paybalance','$expiry','yes','$exp_time','$branch_id','$insert_by')");
 	//print_r($_POST);
     echo "<meta http-equiv='refresh' content='0; url=index.php?vis=trainer_details'>";
 } else {

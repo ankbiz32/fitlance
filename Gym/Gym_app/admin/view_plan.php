@@ -15,7 +15,7 @@
 	</thead>
 	<tbody>
 	<?php
-	$query  = "select * from mem_types ORDER BY rate DESC";
+	$query  = "select * from mem_types where branch_id = '$_SESSION[branch_id]' ORDER BY rate DESC";
 	//echo $query;
 	$result = mysqli_query($con, $query);
 	$sno    = 1;

@@ -39,7 +39,7 @@ if (isset($_POST['dayf'])) {
 				</thead>
 				<tbody>
 				<?php   
-				    $query  = "select * from trainer_pay WHERE join_date BETWEEN '$from' AND '$to'";
+				    $query  = "select * from trainer_pay WHERE join_date BETWEEN '$from' AND '$to' AND branch_id = '$_SESSION[branch_id]'";
 				    $result = mysqli_query($con, $query);
 				    $sno    = 1;
 				    if (mysqli_affected_rows($con) != 0) {
@@ -92,7 +92,7 @@ if (isset($_POST['dayf'])) {
 				</thead>
 				<tbody>
 					<?php
-					    $query  = "select * from trainer_pay WHERE join_date BETWEEN '$from' AND '$to'";
+					    $query  = "select * from trainer_pay WHERE join_date BETWEEN '$from' AND '$to' AND branch_id = '$_SESSION[branch_id]'";
 					    $result = mysqli_query($con, $query);
 					    $sno    = 1;
 					    $total  = 0;

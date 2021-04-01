@@ -15,7 +15,7 @@ $currentYear = date('Y');
 			<select name="member_name" class="form-control chosen-select" required="required">
 			<option value="">-- Please select --</option>						
 			<?php
-			$query  = "select * from user_data where is_active='1' ORDER BY id DESC";
+			$query  = "select * from user_data where is_active='1' AND branch_id = '$_SESSION[branch_id]' ORDER BY id DESC";
 			$result = mysqli_query($con, $query);
 			if (mysqli_affected_rows($con) != 0) {
 				while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
@@ -30,7 +30,7 @@ $currentYear = date('Y');
 			<select name="trainer_name" class="form-control chosen-select-trainer" required="required">
 			<option value="">-- Please select --</option>						
 			<?php
-			$query  = "select * from staff_data where is_active='1' ORDER BY id DESC";
+			$query  = "select * from staff_data where is_active='1' AND branch_id = '$_SESSION[branch_id]' ORDER BY id DESC";
 			$result = mysqli_query($con, $query);
 			if (mysqli_affected_rows($con) != 0) {
 				while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
@@ -48,7 +48,7 @@ $currentYear = date('Y');
 			<select name="trainer_type_id" id="trainer_type_id" data-rule-required="true" class="country form-control" required="required">
 				<option value="">-- Please select --</option>
 				<?php
-				$query = "select * from trainer_types where is_active='1' ORDER BY id DESC";
+				$query = "select * from trainer_types where is_active='1' AND branch_id = '$_SESSION[branch_id]' ORDER BY id DESC";
 				$result = mysqli_query($con, $query);
 				if (mysqli_affected_rows($con) != 0) {
 					while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
