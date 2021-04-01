@@ -77,7 +77,7 @@ echo "<head><script>alert('Profile NOT Updated, Check Again');</script></head></
 echo "<meta http-equiv='refresh' content='0; url=index.php?vis=unpaid'>";
 
 }
- $query2 = "select * from card ";
+ $query2 = "select * from card where branch_id = '$_SESSION[branch_id]' ";
  //echo $query2;
  $result2 = mysqli_query($con, $query2);
  if (mysqli_affected_rows($con) != 0) {

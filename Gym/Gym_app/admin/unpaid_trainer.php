@@ -1,11 +1,6 @@
-﻿<style>
-.hed{
-padding-left:10px; 
-font-weight:bolder; 
-color:#960;
-}
-</style>
+﻿
 <h4 class="hed">Unpaid Personal Trainer List</h4>
+<p>Details of payment dues (for personal trainer) from client to  GYM.</p>
 <hr />
 	<table class="table table-bordered datatable" id="table-2">
 		<thead>

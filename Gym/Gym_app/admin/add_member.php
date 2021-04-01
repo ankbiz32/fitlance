@@ -146,7 +146,7 @@ $currentYear = date('Y');
         <div class="col-sm-7"><select name="mem_type" id="plan" onchange="plan_Details(this.value)" data-rule-required="true" class="form-control" required="required">
 				<option value="">-- Please select --</option>
 				<?php
-					$query = "select * from mem_types";
+					$query = "select * from mem_types where branch_id = '$_SESSION[branch_id]' ";
 					$result = mysqli_query($con, $query);
 					if (mysqli_affected_rows($con) != 0) {
 					  while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {

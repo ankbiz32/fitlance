@@ -60,7 +60,7 @@ if (isset($_POST['name'])) {
 							<select name="mem_type" id="id" data-rule-required="true" class="form-control country" >
 							<option value="">-- Please select --</option>
 								<?php    
-								    $query = "select * from mem_types";
+								    $query = "select * from mem_types where branch_id = '$_SESSION[branch_id]' ";
 								    
 								    //echo $query;
 								    $result = mysqli_query($con, $query);

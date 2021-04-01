@@ -222,7 +222,7 @@ $currentYear = date('Y');
 			<div class="col-sm-9"><select name="trainer_name" class="form-control chosen-select-trainer">
 				<option value="">-- Please select --</option>						
 				<?php
-				$query  = "select * from staff_data where branch_id = '$_SESSION[branch_id]'";
+				$query  = "select * from staff_data where branch_id = '$_SESSION[branch_id]' AND designation='3'";
 				//echo $query;
 				$result = mysqli_query($con, $query);
 				if (mysqli_affected_rows($con) != 0) {

@@ -7,7 +7,7 @@ session_start();
     if (mysqli_num_rows($result2) == 0){
 	   $query = "insert into mem_types(mem_type_id,name,days,rate,insert_by) values ('".$_GET['planid']."','".$_GET['planname']."','".$_GET['plandays']."','".$_GET['planrate']."','".$_SESSION['id']."')";
 	  $result = mysqli_query($con, $query);
-	  $query1 = "select * from mem_types ORDER BY id desc";
+	  $query1 = "select * from mem_types where branch_id = '$_SESSION[branch_id]' ORDER BY id desc";
 		$result = mysqli_query($con, $query1);
 		$num = mysqli_affected_rows($con);
 		if ($num != 0) {
@@ -18,7 +18,7 @@ session_start();
 		}
 	}else
 	{
-	    $query1 = "select * from mem_types ORDER BY id desc";
+	    $query1 = "select * from mem_types where branch_id = '$_SESSION[branch_id]' ORDER BY id desc";
 		$result = mysqli_query($con, $query1);
 		$num = mysqli_affected_rows($con);
 		if ($num != 0) {
@@ -29,7 +29,7 @@ session_start();
 		}
 	}
 }else{
-        $query1 = "select * from mem_types ORDER BY id desc";
+        $query1 = "select * from mem_types where branch_id = '$_SESSION[branch_id]' ORDER BY id desc";
 		$result = mysqli_query($con, $query1);
 		$num = mysqli_affected_rows($con);
 		if ($num != 0) {

@@ -29,14 +29,14 @@ if (isset($_POST['trainer_id'])) {
     $paid_date = date('Y-m-d',strtotime($paid_date1));
     mysqli_query($con, "UPDATE trainer_pay SET total='$total_amount', paid=paid+$paid, paybalance=paybalance-$paid WHERE id=$main_id");
 
-    mysqli_query($con, "INSERT INTO trainer (trainer_id,trainer_name,member_id,member_name,session_name,session_from,session_to,designation,total_amount,percentage,paid,bal,paid_date,invoice,insert_by)VALUES('$trainer_id','$trainer_name','$member_id','$member_name','$session_name','$session_from','$session_to','$designation','$total_amount','$percentage','$paid','$bal','$paid_date','$invoice','$insert_by')");
+    mysqli_query($con, "INSERT INTO trainer (trainer_id,trainer_name,member_id,member_name,session_name,session_from,session_to,designation,total_amount,percentage,paid,bal,paid_date,invoice,branch_id,insert_by)VALUES('$trainer_id','$trainer_name','$member_id','$member_name','$session_name','$session_from','$session_to','$designation','$total_amount','$percentage','$paid','$bal','$paid_date','$invoice','$_SESSION[branch_id]','$insert_by')");
     //print_r($_POST);
     //echo "<meta http-equiv='refresh' content='0; url=index.php?vis=trainer_pay'>";
 } else {
     echo "<head><script>alert('Profile NOT Updated, Check Again');</script></head></html>";
     echo "<meta http-equiv='refresh' content='0; url=index.php?vis=trainer_pay'>";
 }
- $query2 = "select * from card ";
+ $query2 = "select * from card where branch_id = '$_SESSION[branch_id]' ";
  //echo $query2;
  $result2 = mysqli_query($con, $query2);
  if (mysqli_affected_rows($con) != 0) {

@@ -63,7 +63,7 @@ if (isset($_POST['name'])) {
 			<select name="member_name" id="name" class="form-control chosen-select">
 			  <option value="">-- Please select --</option>						
 			  <?php
-				$query  = "select * from user_data";
+				$query  = "select * from user_data where branch_id = '$_SESSION[branch_id]' ";
 				//echo $query;
 				$result = mysqli_query($con, $query);
 				  if (mysqli_affected_rows($con) != 0) {
@@ -79,7 +79,7 @@ if (isset($_POST['name'])) {
 			<select name="trainer_name" id="name" class="form-control chosen-select-trainer">
 			  <option value="">-- Please select --</option>						
 			  <?php
-			  $query  = "select * from staff_data";
+			  $query  = "select * from staff_data where branch_id = '$_SESSION[branch_id]' AND designation='3' ";
 			  //echo $query;
 			  $result = mysqli_query($con, $query);
 				if (mysqli_affected_rows($con) != 0) {
@@ -97,7 +97,7 @@ if (isset($_POST['name'])) {
 			 <select name="trainer_type_id" id="trainer_type_id" data-rule-required="true" class="country form-control" required="required">
 				<option value="">-- Please select --</option>
 				<?php
-				$query = "select * from trainer_types";
+				$query = "select * from trainer_types where branch_id = '$_SESSION[branch_id]' ";
 				//echo $query;
 				$result = mysqli_query($con, $query);
 				if (mysqli_affected_rows($con) != 0) { 

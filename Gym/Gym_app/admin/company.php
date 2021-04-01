@@ -1,6 +1,6 @@
 <div class="table-responsive">
 <h4>Company Profile</h4>
-<div class="col-sm-12" style="padding-bottom:15px;"><a href="?vis=attaindance" class="btn btn-sm btn-info pull-right">Add Company Profile</a></div>
+<!-- <div class="col-sm-12" style="padding-bottom:15px;"><a href="?vis=attaindance" class="btn btn-sm btn-info pull-right">Add Company Profile</a></div> -->
 <hr />
 	<table class="table table-bordered datatable" id="table-1">
 		<thead>

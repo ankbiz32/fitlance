@@ -23,7 +23,7 @@ a {color: #2652a5;}
 		</thead>
 		<tbody>
 		<?php
-			$query  = "select * from subsciption where renewal='yes' AND is_active='1' AND is_deleted='0' AND branch_id = '$_SESSION[branch_id]' ORDER BY id DESC";
+			$query  = "select * from subsciption where renewal='yes' AND is_active='1' AND is_deleted='0' AND (branch_id = '$_SESSION[branch_id]' OR is_combo_member ='1' ) ORDER BY id DESC";
 			$result = mysqli_query($con, $query);
 		    $sno    = 1;
 			if (mysqli_affected_rows($con) != 0) {
@@ -53,7 +53,11 @@ a {color: #2652a5;}
 					echo "<td>" . $row3['rate'] . " / " . $row['dis'] . "</td>";
 					echo "<td>" . $row['paid'] . " / " . $row['bal'] . "</td>";
 					echo "<td>" . $date1 . "</td>";
-					echo "<td><form action='deactive_member.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' onclick='return confirm(\"Are you sure you want to make this member inactive?\");' value='Make inactive ' class='btn btn-success btn-sm pull-left'/></form><form action='index.php?vis=read_member' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='View' class='btn btn-info btn-sm pull-left'/></form><form action='index.php?vis=edit_member' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' style='color:black' value='Edit' class='btn btn-warning btn-sm pull-left'/></form><form action='del_member.php' method='post' onSubmit='return ConfirmDelete();'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' onclick='return confirm(\"Are you sure you want to delete this member?\");' value='Delete ' class='btn btn-danger btn-sm pull-left'/></form></td></tr>";
+					if($row['is_combo_member'] && $row['branch_id']!=$_SESSION['branch_id']){
+						echo "<td><form action='index.php?vis=read_member' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='View' class='btn btn-info btn-sm pull-left'/></form></td></tr>";
+					} else{
+						echo "<td><form action='deactive_member.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' onclick='return confirm(\"Are you sure you want to make this member inactive?\");' value='Make inactive ' class='btn btn-success btn-sm pull-left'/></form><form action='index.php?vis=read_member' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='View' class='btn btn-info btn-sm pull-left'/></form><form action='index.php?vis=edit_member' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' style='color:black' value='Edit' class='btn btn-warning btn-sm pull-left'/></form><form action='del_member.php' method='post' onSubmit='return ConfirmDelete();'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' onclick='return confirm(\"Are you sure you want to delete this member?\");' value='Delete ' class='btn btn-danger btn-sm pull-left'/></form></td></tr>";
+					}
 					$sno++;
 					$msgid = 0;
 

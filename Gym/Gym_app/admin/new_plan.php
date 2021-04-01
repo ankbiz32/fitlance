@@ -1,4 +1,4 @@
-﻿  <h4>New Plan</h4>
+﻿  <h4 class="hed">+ Add New Membership Plan</h4>
   <hr />
   <form action="submit_plan_new.php" enctype="multipart/form-data" method="POST" role="form" class="form-horizontal form-groups-bordered">
             <?php
@@ -11,10 +11,14 @@
             ?>
             <input type="hidden" name="p_id" value="<?php echo getRandomWord(); ?>" class="form-control"  readonly/>
       <div class="form-group">
-        <label for="field-1" class="col-sm-3 control-label">Name :</label>					
+          <label for="field-1" class="col-sm-3 control-label">Name :</label>					
           <div class="col-sm-5">
             <input type="text" name="name" id="textfield3" class="form-control" data-rule-required="true" data-rule-minlength="4" placeholder="Plan Name" maxlength="100">
           </div>
+
+
+          <input type="checkbox" name="is_combo" id="checkbox" class="">
+          <label for="checkbox" class="control-label" style="margin-bottom:2px">Is a combo plan (Can workout in both gyms with this plan)</label>					
       </div>
       <div class="form-group">
         <label for="field-1" class="col-sm-3 control-label">Days :</label>					

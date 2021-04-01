@@ -11,6 +11,7 @@ page_protect();
 				$details   = $row1['details'];
 				$days      = $row1['days'];
 				$rate      = $row1['rate'];
+				$combo      = $row1['is_combo'];
 			}
 		}
     $invoice      = rtrim($_POST['invoice']);
@@ -47,21 +48,21 @@ page_protect();
 		$date1        = date('d-m-Y',strtotime($curr_date));
 		$p_id         = $_POST['p_id'];
 		
-		mysqli_query($con, "UPDATE user_data SET name='$full_name',address='$address',zipcode='$zipcode',birthdate='$birthdate',contact='$contact',email='$email',curr_date='$curr_date',landline='$landline',joining='$joindate',workout_time_id='$workout_time',sex='$sex' WHERE newid=$p_id");
+		mysqli_query($con, "UPDATE user_data SET name='$full_name',address='$address',zipcode='$zipcode',birthdate='$birthdate',contact='$contact',email='$email',curr_date='$curr_date',landline='$landline',joining='$joindate',workout_time_id='$workout_time',sex='$sex',is_combo_member='$combo' WHERE newid=$p_id");
 		
 		$to_date1     = strtotime($to_date);
 		$expiry       = $expiry ;
 		$expiry1      = date('d-m-Y',strtotime( $expiry ));
 		$total = $total - $dis;
 			
-		mysqli_query($con, "UPDATE subsciption SET sub_type='$mem_type',sub_type_name='$name_type',paid_date='$joindate',total='$total',dis='$dis',paid='$paid',bal='$bal',expiry='$expiry',payment_method='$payment_method',cheque_no='$chequeno',bank_id='$bank_id',pay_date='$curr_date' WHERE mem_id=$p_id AND invoice='".$invoice."'");
+		mysqli_query($con, "UPDATE subsciption SET sub_type='$mem_type',sub_type_name='$name_type',paid_date='$joindate',total='$total',dis='$dis',paid='$paid',bal='$bal',expiry='$expiry',payment_method='$payment_method',cheque_no='$chequeno',bank_id='$bank_id',pay_date='$curr_date',is_combo_member='$combo' WHERE mem_id=$p_id AND invoice='".$invoice."'");
 		mysqli_query($con, "UPDATE payment SET sub_type='$mem_type',sub_type_name='$name_type',total='$total',dis='$dis',paid='$paid',bal='$bal',expiry='$expiry',payment_method='$payment_method',cheque_no='$chequeno',bank_id='$bank_id',pay_date='$curr_date' WHERE mem_id=$p_id AND invoice='".$invoice."'");
 		echo "<meta http-equiv='refresh' content='0; url=index.php?vis=view_mem'>";
 	} else {
 		echo "<head><script>alert('Profile NOT Updated, Check Again');</script></head></html>";
 		echo "<meta http-equiv='refresh' content='0; url=index.php?vis=view_mem'>";
 	}
-	$query2 = "select * from card ";
+	$query2 = "select * from card where branch_id = '$_SESSION[branch_id]' ";
 	//echo $query2;
 	$result2 = mysqli_query($con, $query2);
 	if (mysqli_affected_rows($con) != 0) {

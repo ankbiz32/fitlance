@@ -5,7 +5,8 @@
 <table class="table table-bordered datatable" id="table-1">
 	<thead>
 		<tr>
-			<th>S.No</th><th>Plan ID</th>
+			<th>S.No</th>
+			<th>Plan ID</th>
 			<th>Plan name</th>
 			<th>Days</th>
 			<th>Rate</th>
@@ -27,9 +28,9 @@
 			$result11 = mysqli_query($con, $query11);
 			$row11 = mysqli_fetch_array($result11, MYSQLI_ASSOC);
 			
-			echo "<tr><td>" . $sno . "</td>";
+			echo "<tr><td>" . $sno;   echo "</td>";
 			echo "<td>" . $row['mem_type_id'] . "</td>";
-			echo "<td>" . $row['name'] . "</td>";
+			echo "<td>" . $row['name'] ;if($row['is_combo']) echo " &nbsp; <small style='background:yellow;padding:2px 4px'><strong> COMBO PLAN<strong><small>"; echo"</td>";
 			echo "<td>" . $row['days'] . "</td>";
 			echo "<td>" . $row['rate'] . "</td>";
 			/*echo "<td>" . $row11['name'] . "</td>";*/
