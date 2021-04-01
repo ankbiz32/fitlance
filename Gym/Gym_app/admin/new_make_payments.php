@@ -64,8 +64,8 @@ if (isset($_POST['p_id']) && isset($_POST['mem_type']) && isset($_POST['total'])
 		$bal = $total - $paid;
 		mysqli_query($con, "UPDATE subsciption SET renewal='no' WHERE mem_id=$p_id");
 		mysqli_query($con, "UPDATE payment SET renewal='no' WHERE mem_id=$p_id");
-		mysqli_query($con, "INSERT INTO subsciption (mem_id,bank_id,name,sub_type,paid_date,total,paid,dis,expiry,invoice,sub_type_name,bal,exp_time,payment_method,cheque_no,renewal,curr_date,pay_date,insert_by)
-		VALUES ('$p_id','$bank_id','$full_name','$mem_type','$paiddate1','$total','$paid','$dis','$expiry','$invoice','$name_type','$bal','$exp_time','$paymentdata','$chequeno','yes','$curr_date','$pay_date','$insert_by')");
+		mysqli_query($con, "INSERT INTO subsciption (mem_id,bank_id,name,sub_type,paid_date,total,paid,dis,expiry,invoice,sub_type_name,bal,exp_time,payment_method,cheque_no,renewal,curr_date,pay_date,insert_by,branch_id)
+		VALUES ('$p_id','$bank_id','$full_name','$mem_type','$paiddate1','$total','$paid','$dis','$expiry','$invoice','$name_type','$bal','$exp_time','$paymentdata','$chequeno','yes','$curr_date','$pay_date','$insert_by','$_SESSION[branch_id]')");
 
         mysqli_query($con, "INSERT INTO payment (mem_id,bank_id,name,sub_type,total,paid,dis,total_dis,expiry,invoice,sub_type_name,bal,payment_method,cheque_no,renewal,pay_date,insert_by)
 	    VALUES ('$p_id','$bank_id','$full_name','$mem_type','$total','$paid','$dis','$total_dis','$expiry','$invoice','$name_type','$bal','$paymentdata','$chequeno','yes','$pay_date','$insert_by')");

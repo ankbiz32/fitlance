@@ -65,7 +65,7 @@
 				<?php
 				$time    = time();
 				$newtime = $time + 864000; //10 days after current day
-				$query   = "select * from subsciption WHERE exp_time < $newtime AND renewal='yes' AND bal=0 AND expiry  BETWEEN '$from2' AND '$to2' AND is_active='1' AND is_deleted='0' AND branch_id= '$_SESSION[branch_id]' ORDER BY expiry DESC";
+				$query   = "select * from subsciption WHERE  renewal='yes' AND bal=0 AND expiry  BETWEEN '$from2' AND '$to2' AND is_active='1' AND is_deleted='0' AND branch_id= '$_SESSION[branch_id]' ORDER BY expiry DESC";
 				$result  = mysqli_query($con, $query);
 				$sno     = 1;
 				if (mysqli_affected_rows($con) != 0) {
