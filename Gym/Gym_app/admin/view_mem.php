@@ -4,7 +4,7 @@ a {color: #2652a5;}
 </style>
 
 	<div class="table-responsive">
-	<h4 class="hed">Member Details</h4>
+	<h4 class="hed">Members & their membership details</h4>
 	<div class="col-sm-12" style="padding-bottom:20px;"><form method="post" action="export_mem.php"><input type="submit" name="export" class="btn btn-sm btn-success pull-right" value="Export To Excel" /></form><a href="?vis=new_entry" class="btn btn-sm btn-info pull-right">Add Member</a></div>
 	<hr />
 	<table class="table table-bordered datatable" id="table-12">

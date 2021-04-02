@@ -67,7 +67,7 @@ $stafid = $_POST['name'];
 			<tbody>
 			<?php
 			//$date  = date('Y-m');
-			$query = "select * from trainer_pay WHERE exp_time>0 AND staff_id='$stafid'";
+			$query = "select * from trainer_pay WHERE exp_time>0 AND staff_id='$stafid' ORDER BY id desc";
 			//echo $query;
 			$result = mysqli_query($con, $query);
 			$sno    = 1;
@@ -84,12 +84,21 @@ $stafid = $_POST['name'];
 							echo "<tr><td>" . $sno . "</td>";
 							echo "<td>" . $row['member_id'] . " / " . $row['member_name'] . "</td>";
 							echo "<td>" . $row['total'] . "</td>";
-							echo "<td>40%</td>";
-							echo "<td>" . $row['total']*0.4 . "</td>";
+							if($row['comission_paid']){
+								echo "<td>".$row['comission_percent']."%</td>";
+								echo "<td>" . $row['total']*($row['comission_percent']/100) . "</td>";
+							}else{
+								echo "<td>40%</td>";
+								echo "<td>" . $row['total']*0.4 . "</td>";
+							}
 							echo "<td>" . $row21['name'] . "</td>";
 							echo "<td>" . $date1 . " / " . $date2 . "</td>";
 							$sno++;
-							echo "<td><form action='index.php?vis=trainer_pay' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Trainer Payment' class='btn btn-info'/></form></td></tr>";
+							if($row['comission_paid']){
+								echo "<td style='color:green'>PAID</td></tr>";
+							}else{
+								echo "<td><form action='index.php?vis=trainer_pay' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Pay now' class='btn btn-info'/></form></td></tr>";
+							}
 							$stafid = 0;
 					}
 				}

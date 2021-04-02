@@ -27,9 +27,12 @@ if (isset($_POST['trainer_id'])) {
 	$bal = $total_amount - $paid;
 	$invoice   = substr(time(), 2, 10) . getRandomWord();
     $paid_date = date('Y-m-d',strtotime($paid_date1));
-    mysqli_query($con, "UPDATE trainer_pay SET total='$total_amount', paid=paid+$paid, paybalance=paybalance-$paid WHERE id=$main_id");
-
-    mysqli_query($con, "INSERT INTO trainer (trainer_id,trainer_name,member_id,member_name,session_name,session_from,session_to,designation,total_amount,percentage,paid,bal,paid_date,invoice,branch_id,insert_by)VALUES('$trainer_id','$trainer_name','$member_id','$member_name','$session_name','$session_from','$session_to','$designation','$total_amount','$percentage','$paid','$bal','$paid_date','$invoice','$_SESSION[branch_id]','$insert_by')");
+	
+	$qry="INSERT INTO trainer (trainer_id,trainer_name,member_id,member_name,session_name,session_from,session_to,designation,total_amount,percentage,paid,bal,paid_date,invoice,branch_id,insert_by)VALUES('$trainer_id','$trainer_name','$member_id','$member_name','$session_name','$session_from','$session_to','$designation','$total_amount','$percentage','$paid','$bal','$paid_date','$invoice','$_SESSION[branch_id]','$insert_by')";
+    if(mysqli_query($con, $qry))
+	{
+		mysqli_query($con, "UPDATE trainer_pay SET comission_paid='1', comission_percent='$percentage' WHERE id='$main_id'");
+	}
     //print_r($_POST);
     //echo "<meta http-equiv='refresh' content='0; url=index.php?vis=trainer_pay'>";
 } else {

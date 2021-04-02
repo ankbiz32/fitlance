@@ -8,13 +8,20 @@
 	$currentYear = date('Y');
 	?>
     <div class="table-responsive">
-    <h4 class="hed">Ending Member Lists</h4>
-    <p class="">Filter by membership expiry date</p>
-    <div class="col-sm-12" style="padding-bottom:15px;"><form method="post" action="export_ending.php"><input type="submit" name="export" class="btn btn-sm btn-success pull-right" value="Export To Excel" /></form></div>
+    <div style="" class="row">
+		<div class="col-sm-8">
+				<h4 class="hed">Ending Member Lists</h4>
+				<p class="">Members with 0 balance will be shown here <br>  </p>
+			</div>
+		<div class="col-sm-4" style="padding-bottom:15px;"><form method="post" action="export_ending.php"><input type="submit" name="export" class="btn btn-sm btn-success pull-right" value="Export To Excel" /></form></div>
+	</div>
     <hr />
 
 	<form action="?vis=sub_end" method="POST" class='form-horizontal form-bordered'>
 	<div class="row">
+	<div class="col-sm-12" style="">
+		(Filter by membership expiry date) <br> <br>
+	</div>
 	<div class="col-md-4 form-group"><label for="field-1" class="col-sm-3">From :</label>					
 		<div class="col-sm-9">
 			<?php echo "<select name='dayf'>"; foreach($days as $valued) { if($valued == $currentDay){ $default = 'selected="selected"'; echo '<option '.$default.' value="'.$valued.'">'.$valued.'</option>\n'; } else { $default=''; echo '<option '.$default.' value="'.$valued.'">'.$valued.'</option>\n'; }} echo '</select> &nbsp; ';

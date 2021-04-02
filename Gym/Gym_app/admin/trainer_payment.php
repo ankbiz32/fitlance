@@ -1,6 +1,6 @@
 ﻿<div class="table-responsive">
-  <h4 class="hed">+ Add trainer Payment</h4>
-  <p>Select any trainer to view their allotted members & add member-wise payment</p>
+  <h4 class="hed">+ Add trainer Payment/Comission (GYM to trainer)</h4>
+  <p>Select any trainer to view their assigned members & add member-wise payment</p>
   <!--<div class="col-sm-12" style="padding-bottom: 15px;"><a href="?vis=trainer" class="btn btn-sm btn-info pull-right">Add Person Trainer</a></div>-->
   <hr />
   <table class="table table-bordered datatable" id="table-1">

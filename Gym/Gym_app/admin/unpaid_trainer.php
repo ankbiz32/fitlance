@@ -18,7 +18,7 @@
 		</thead>
 		<tbody>
 		<?php
-		$query = "select * from trainer_pay WHERE paybalance>0 AND branch_id = '$_SESSION[branch_id]' ORDER BY paybalance DESC";
+		$query = "select * from trainer_pay WHERE paybalance>0 AND is_active='1' AND branch_id = '$_SESSION[branch_id]' ORDER BY id DESC";
 		$result = mysqli_query($con, $query);
 		$sno    = 1;
 		$income = 0;

@@ -21,7 +21,7 @@
 		</thead>
 		<tbody>
 		<?php
-		$query = "select * from subsciption WHERE bal>0 AND branch_id = '$_SESSION[branch_id]' ORDER BY bal DESC";
+		$query = "select * from subsciption WHERE bal>0 AND branch_id = '$_SESSION[branch_id]' AND is_active = '1' ORDER BY id DESC";
 		$result = mysqli_query($con, $query);
 		$sno    = 1;
 		$income = 0;
