@@ -57,15 +57,15 @@
         <table class="table table-bordered datatable" id="table-1">
 			<thead>
 				<tr>
-				<th>S.No</th>
-				<th>Name / Member ID</th>
-				<th>Contact</th>
-				<th>Plan Name / Rate</th>
-				<th>Discount / Total</th>
-				<th>Paid / Balance</th>
-				<th>Join Date / Expiry Date</th>
-				<th>Date of Payment</th>
-				<th>Action</th>
+					<th>S.No</th>
+					<th>Member Name / Id <br><small> (contact)</small></th>
+					<th>Plan name</th>
+					<th>Join Date / <br> Exp. date</th>
+					<th>Payable amt.<br> <small>(Rate - Discount)</small></th>
+					<th>Paid</th>
+					<th>Balance</th>
+					<th>Date of Payment</th>
+					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -91,13 +91,13 @@
 			                $date2 = date('d-m-Y',strtotime( $row['expiry'] ));
 						    $date3 = date('d-m-Y',strtotime( $row['pay_date'] ));
 						        echo "<td>" . $sno . "</td>";
-						        echo "<td>" . $row['name']. " / " .  $msgid . "</td>";
-						        echo "<td>" . $row1['contact'] . "</td>";
-						        echo "<td>" . $row['sub_type_name'] .  " / " .  $row11['rate'] . "</td>";
-						        echo "<td>" . $row['dis'] . " / " . $row['total'] ."</td>";
-						        echo "<td>" . $row['paid'] . " / ". $row['bal'] . "</td>";
-						        echo "<td>" . $date1 . " / " . $date2 . "</td>";
-						        echo "<td>" . $date3 . "</td>";
+						        echo "<td>" . $row['name']. " / " .  $msgid . " <br>(".$row1['contact'].")</td>";
+								echo "<td>" . $row['sub_type_name'] . "</td>";
+								echo "<td style='white-space:nowrap'>" . $date1 . " / <br>" . $date2 . "</td>";
+								echo "<td>" . ($row11['rate']-$row['dis'])."<br><span  style='white-space:nowrap'>(".$row11['rate']. " - " .$row['dis']. ")</span></td>";
+								echo "<td>" . $row['paid'] . "</td>";
+								echo "<td>" . $row['bal'] . "</td>";
+								echo "<td>" . $date3 . "</td>";
 						        $sno++;
 						        
 						        echo "<td><form action='deactive_member.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Make inactive ' class='btn btn-success btn-sm pull-left'/></form><form action='?vis=make_payments' method='post'><input type='hidden' name='name' value='" . $row['mem_id'] . "'/><input type='submit' value='Renewal' class='btn btn-info'/></form></td></tr>";
@@ -115,15 +115,15 @@
 		<table class="table table-bordered datatable" id="table-1">
 			<thead>
 				<tr>
-				<th>S.No</th>
-				<th>Name / Member ID</th>
-				<th>Contact</th>
-				<th>Plan Name / Rate</th>
-				<th>Discount / Total</th>
-				<th>Paid / Balance</th>
-				<th>Join Date / Expiry Date</th>
-				<th>Date of Payment</th>
-				<th>Action</th>
+					<th>S.No</th>
+					<th>Member Name / Id <br><small> (contact)</small></th>
+					<th>Plan name</th>
+					<th>Join Date / <br> Exp. date</th>
+					<th>Payable amt.<br> <small>(Rate - Discount)</small></th>
+					<th>Paid</th>
+					<th>Balance</th>
+					<th>Date of Payment</th>
+					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -148,17 +148,19 @@
 					        $date1 = date('d-m-Y',strtotime( $row['paid_date'] ));
 			                $date2 = date('d-m-Y',strtotime( $row['expiry'] ));
 						    $date3 = date('d-m-Y',strtotime( $row['pay_date'] ));
-						        echo "<td>" . $sno . "</td>";
-						        echo "<td>" . $row['name']. " / " .  $msgid . "</td>";
-						        echo "<td>" . $row1['contact'] . "</td>";
-						        echo "<td>" . $row['sub_type_name'] .  " / " .  $row11['rate'] . "</td>";
-						        echo "<td>" . $row['dis'] . " / " . $row['total'] ."</td>";
-						        echo "<td>" . $row['paid'] . " / ". $row['bal'] . "</td>";
-						        echo "<td>" . $date1 . " / " . $date2 . "</td>";
-						        echo "<td>" . $date3 . "</td>";
+								echo "<td>" . $sno . "</td>";
+						        echo "<td>" . $row['name']. " / " .  $msgid . " <br>(".$row1['contact'].")</td>";
+								echo "<td>" . $row['sub_type_name'] . "</td>";
+								echo "<td style='white-space:nowrap'>" . $date1 . " / <br>" . $date2 . "</td>";
+								echo "<td>" . ($row11['rate']-$row['dis'])."<br><span  style='white-space:nowrap'>(".$row11['rate']. " - " .$row['dis']. ")</span></td>";
+								echo "<td>" . $row['paid'] . "</td>";
+								echo "<td>" . $row['bal'] . "</td>";
+								echo "<td>" . $date3 . "</td>";
 						        $sno++;
 						        
-						        echo "<td><form action='deactive_member.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Make inactive ' onclick='return confirm(\"Are you sure you want to make this member inactive?\");' class='btn btn-success btn-sm pull-left'/></form><form action='?vis=make_payments' method='post'><input type='hidden' name='name' value='" . $row['mem_id'] . "'/><input type='submit' value='Renewal' class='btn btn-info'/></form></td></tr>";
+						        echo "<td style='display:flex'>
+								<form action='?vis=make_payments' style='margin-right:3px' method='post'><input type='hidden' name='name' value='" . $row['mem_id'] . "'/><input type='submit' value='Renew membership' class='btn btn-sm btn-info'/></form>
+								<form action='deactive_member.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Make inactive' onclick='return confirm(\"Are you sure you want to make this member inactive?\");' class='btn btn-success btn-sm pull-left'/></form></td></tr>";
 						        $msgid = 0;
 						    }
 						}

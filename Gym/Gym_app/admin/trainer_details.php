@@ -7,22 +7,23 @@ color:#960;
 <div class="table-responsive">
   <div class="row ">
 	  <div class="col-sm-6">
-		  <h4 class="hed">Members & their trainers details</h4>
+		  <h4 class="hed">Members & their trainers list</h4>
 		  <p style="color:#333">List of all the members with their assigned trainers & plan details</p>
 	  </div>
-	  <div class="col-sm-6" style="padding-bottom: 15px;"><form method="post" action="export_trainerdetail.php"><input type="submit" name="export" class="btn btn-sm btn-danger pull-right" value="Export To Excel" /></form><a href="?vis=trainer" class="btn btn-sm btn-info pull-right">Add Person Trainer</a></div>
+	  <div class="col-sm-6" style="padding-bottom: 15px;"><form method="post" action="export_trainerdetail.php"><input type="submit" name="export" class="btn btn-sm btn-danger pull-right" value="Export To Excel" /></form><a href="?vis=trainer" class="btn btn-sm btn-info pull-right">Add Personal Trainer</a></div>
   </div>
   <hr />
   <table class="table table-bordered datatable" id="table-1">
     <thead>
       <tr>
         <th>S.No.</th>
-        <th>Member Name / Member ID</th>
-		<th>Trainer Name / Trainer ID</th>
-		<th style="width:100px;">Join Date/ Expiry Date </th>
-		<th>Session / Insert By</th>
-		<th>Total</th>
-		<th>Paid / Balance</th>
+        <th>Member Name / ID</th>
+		<th>Trainer Name / ID</th>
+		<th style="width:100px;">Join Date/ <br>Expiry Date </th>
+		<th>Session</th>
+		<th>Payable</th>
+		<th>Paid</th>
+		<th>Balance</th>
 		<th>Invoice</th>
         <th style="width: 200px !important;">Action</th>
       </tr>
@@ -36,13 +37,9 @@ color:#960;
             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             $stafid = $row['id'];
 						$id = $row['insert_by'];
-						$query11  = "select * from auth_user WHERE id='$id'";
-						$result11 = mysqli_query($con, $query11);
-						$row11 = mysqli_fetch_array($result11, MYSQLI_ASSOC);
 						$query2  = "select * from trainer_types WHERE staff_type_id='".$row['trainer_type_id']."'";
 						$result2 = mysqli_query($con, $query2);
 						$row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC);
-						$name = $row11['name'];
 						$msgid = $row['invoice'];
 						$date1 = date('d-m-Y',strtotime( $row['join_date'] ));
 						$date2 = date('d-m-Y',strtotime( $row['expiry_date'] ));
@@ -50,10 +47,11 @@ color:#960;
 					echo "<tr><td>" . $sno . "</td>";
 					echo "<td>" . $row['member_name'] . " / " . $row['member_id'] . "</td>";
 					echo "<td>" . $row['staff_name'] . " / " . $row['staff_id'] . "</td>";
-					echo "<td>" . $date1 . "/ ".$date2."</td>";
-					echo "<td>" . $row2['name']. " / " . $row11['name'] . "</td>";
+					echo "<td style='white-space:nowrap'>" . $date1 . " / <br>" . $date2 . "</td>";
+					echo "<td>" . $row2['name']. "</td>";
 					echo "<td>" . $row['total'] . "</td>";
-					echo "<td>" . $row['paid'] . " / " . $row['paybalance'] . "</td>";
+					echo "<td>" . $row['paid'] . "</td>";
+					echo "<td>" . $row['paybalance'] . "</td>";
 					echo "<td>" . $row['invoice'] . "</td>";
 					$sno++;
 					// if($row['paybalance']>0){

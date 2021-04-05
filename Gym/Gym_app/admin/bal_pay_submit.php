@@ -162,7 +162,7 @@ echo "<meta http-equiv='refresh' content='0; url=index.php?vis=unpaid'>";
     </script>
 	</head>
 	<body>
-	    <a href="javascript:void();" onClick="printbody()">Print</a> 
+	    <a href="javascript:void();" onClick="printbody()">Print</a> | <?php echo "<a href='index.php?vis=unpaid'>Back</a>" ?>
 	    <header>
 			<a href="index.php?vis=unpaid"><h1>Invoice (Payment)</h1></a>
 			<address>

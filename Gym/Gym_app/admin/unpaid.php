@@ -9,12 +9,12 @@
 			<tr>
 				<th>S.No</th>
 				<th>Invoice</th>
-				<th>Name / Member ID</th>
-				<th>Contact</th>
-				<th>Plan Name / Rate</th>
-				<th>Total / Discount </th>
-				<th>Paid / Balance</th>
-				<th>Join Date / Expiry Date</th>
+				<th>Member Name / ID<br><small> (contact)</small></th>
+				<th>Plan Name</th>
+				<th>Join Date / <br> Expiry Date</th>
+				<th>Payable amt.<br> <small>(Rate - Discount)</small></th>
+				<th>Paid </th>
+				<th>Balance</th>
 				<th>Date of Payment</th>
 				<th>Action</th>
 			</tr>
@@ -42,16 +42,15 @@
 						$date3 = date('d-m-Y',strtotime( $row['pay_date'] ));
 						echo "<td>" . $sno . "</td>";
 						echo "<td>" . $row['invoice'] . "</td>";
-						echo "<td>" . $row['name']. " / " .  $msgid . "</td>";
-						echo "<td>" . $row1['contact'] . "</td>";
-						echo "<td>" . $row['sub_type_name'] .  " / " .  $row11['rate'] . "</td>";
-						echo "<td>" . $row['total'] . " / " . $row['dis'] ."</td>";
-						echo "<td>" . $row['paid'] . " / ". $row['bal'] . "</td>";
-						echo "<td>" . $date1 . " / " . $date2 . "</td>";
+						echo "<td>" . $row['name']. " / " .  $msgid . " <br>(".$row1['contact'].")</td>";
+						echo "<td>" . $row['sub_type_name'] . "</td>";
+						echo "<td style='white-space:nowrap'>" . $date1 . " / <br>" . $date2 . "</td>";
+						echo "<td>" . ($row11['rate']-$row['dis'])."<br><span  style='white-space:nowrap'>(".$row11['rate']. " - " .$row['dis']. ")</span></td>";
+						echo "<td>" . $row['paid'] . "</td>";
+						echo "<td>"	 .$row['bal'] . "</td>";
 						echo "<td>" . $date3 . "</td>";
 				        $sno++;
-						echo "<td><form action='?vis=bal_pay' method='post'><input type='hidden' name='name' value='" . $row['invoice'] . "'/><input type='submit' value='Pay Balance ' class='btn btn-info'/></form>
-						<form action='?vis=view_payment_details' method='post'><input type='hidden' name='name' value='" . $row['invoice'] . "'/><input type='submit' value='View Balance ' class='btn btn-success'/></form></td></tr>";
+						echo "<td><form action='?vis=bal_pay' method='post'><input type='hidden' name='name' value='" . $row['invoice'] . "'/><input type='submit' value='Pay Balance ' class='btn btn-info'/></form></td></tr>";
 						$msgid  = 0;
 						$income = $row['bal'] + $income;
 						}

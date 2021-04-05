@@ -47,11 +47,11 @@ if (isset($_POST['name'])) {
 			<div class="col-sm-6"><input type="text" name="website" id="emailfield" class="form-control" value="<?php echo $website; ?>" data-rule-minlength="5" placeholder="Website" maxlength="60" required="required" /></div>
 		</div>
 	</div>
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col-md-8 form-group"><label for="field-1" class="col-sm-3 control-label">Image:</label>				
 			<div class="col-sm-6"><input type="file" name="image" id="fileToUpload" value="<?php echo $img_location; ?>"  required="required" /></div>
 		</div>
-	</div>
+	</div> -->
 	<div class="col-md-12 form-group">		
 		<div class="col-sm-offset-1 col-sm-11">
 			<button type="submit" class="btn btn-primary">Submit</button>

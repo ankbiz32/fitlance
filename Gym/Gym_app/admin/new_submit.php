@@ -229,7 +229,7 @@ if (isset($_POST['p_name']) && isset($_POST['mem_type']) && isset($_POST['total'
     </script>
 	</head>
 	<body>
-	    <a href="javascript:void();" onClick="printbody()">Print</a> | <?php echo "<form action='index.php?vis=edit_member' method='post' id='hed'><input type='hidden' name='name' value='" . $p_id . "'/><button type='submit' class='hed_btn'>Back</button></form>" ?>
+	    <a href="javascript:void();" onClick="printbody()">Print</a> | <?php echo "<a href='index.php?vis=view_mem'>Back</a>" ?>
 		<header>
 			<a href="index.php?vis=view_mem"><h1>Invoice (New Registration)</h1></a>
 			<address>

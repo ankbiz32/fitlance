@@ -11,13 +11,12 @@ a {color: #2652a5;}
 		<thead>
 			<tr>
 			<th>S.No</th>
-			<th>Member Name / Id</th>
-			<th>Address / Contact</th>
-			<th>Gender / Workout Time</th>
-			<th>Join Date / Plan</th>
-			<th>Total / Discount</th>
-			<th>Paid / Balance</th>
-			<th>Membership Expiry</th>
+			<th>Member Name / Id <br><small> (contact)</small></th>
+			<th>Plan / Workout Time</th>
+			<th>Join Date / <br> Exp. date</th>
+			<th>Payable amt.<br> <small>(Rate - Discount)</small></th>
+			<th>Paid</th>
+			<th>Balance</th>
 			<th style="width: 230px !important;">Action</th>
 			</tr>
 		</thead>
@@ -43,21 +42,27 @@ a {color: #2652a5;}
 				$row3 = mysqli_fetch_assoc($result3);
 				
 				$date1 = date('d-m-Y',strtotime( $row['expiry'] ));
-				$date2 = date('d-m-Y',strtotime( $row1['joining'] ));
+				// $date2 = date('d-m-Y',strtotime( $row1['joining'] ));
+				$date2 = date('d-m-Y',strtotime( $row['paid_date'] ));
 
-				    echo "<tr><td>" .  $sno . "</td>";					
-					echo "<td>" . "<a href='index.php?vis=member_info&name=".$msgid."'>".$row1['name'] . " / " . $row1['newid']."</a>" . "</td>";
-					echo "<td>" . $row1['address'] . " / " . $row1['contact'] . "</td>";
-					echo "<td>" . $row1['sex'] . " / " . $row2['name'] . "</td>";
-					echo "<td>" . $date2 . " / " . $row['sub_type_name'] . "</td>";
-					echo "<td>" . $row3['rate'] . " / " . $row['dis'] . "</td>";
-					echo "<td>" . $row['paid'] . " / " . $row['bal'] . "</td>";
-					echo "<td>" . $date1 . "</td>";
-					if($row['is_combo_member'] && $row['branch_id']!=$_SESSION['branch_id']){
-						echo "<td><form action='index.php?vis=read_member' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='View' class='btn btn-info btn-sm pull-left'/></form></td></tr>";
-					} else{
-						echo "<td><form action='deactive_member.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' onclick='return confirm(\"Are you sure you want to make this member inactive?\");' value='Make inactive ' class='btn btn-success btn-sm pull-left'/></form><form action='index.php?vis=read_member' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='View' class='btn btn-info btn-sm pull-left'/></form><form action='index.php?vis=edit_member' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' style='color:black' value='Edit' class='btn btn-warning btn-sm pull-left'/></form><form action='del_member.php' method='post' onSubmit='return ConfirmDelete();'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' onclick='return confirm(\"Are you sure you want to delete this member?\");' value='Delete ' class='btn btn-danger btn-sm pull-left'/></form></td></tr>";
-					}
+				    echo "
+					<tr>
+
+						<td>" .  $sno . "</td>";					
+						echo "<td>" . "<a href='index.php?vis=member_info&name=".$msgid."'>".$row1['name'] . " / " . $row1['newid']."</a> <br> <span>(".$row1['contact'].")</span></td>";
+						echo "<td>" . $row['sub_type_name'] . " / " . $row2['name'] . "</td>";
+						echo "<td style='white-space:nowrap'>" . $date2 . " / <br>" . $date1 . "</td>";
+						echo "<td>" . ($row3['rate']-$row['dis'])."<br><span  style='white-space:nowrap'>(".$row3['rate']. " - " .$row['dis']. ")</span></td>";
+						echo "<td>" . $row['paid'] . "</td>";
+						echo "<td>" . $row['bal'] . "</td>";
+						if($row['is_combo_member'] && $row['branch_id']!=$_SESSION['branch_id']){
+							echo "<td><form action='index.php?vis=read_member' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='View' class='btn btn-info btn-sm pull-left'/></form></td>";
+						} else{
+							echo "<td><form action='deactive_member.php' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' onclick='return confirm(\"Are you sure you want to make this member inactive?\");' value='Make inactive ' class='btn btn-success btn-sm pull-left'/></form><form action='index.php?vis=read_member' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='View' class='btn btn-info btn-sm pull-left'/></form><form action='index.php?vis=edit_member' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' style='color:black' value='Edit' class='btn btn-warning btn-sm pull-left'/></form><form action='del_member.php' method='post' onSubmit='return ConfirmDelete();' hidden><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' onclick='return confirm(\"Are you sure you want to delete this member?\");' value='Delete ' class='btn btn-danger btn-sm pull-left'/></form></td>";
+						}
+						echo" 
+
+					</tr>";
 					$sno++;
 					$msgid = 0;
 

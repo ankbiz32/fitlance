@@ -29,7 +29,8 @@
 				echo "<td>" . $row['email'] . "</td>";
 				echo "<td>" . $row['website'] . "</td>";
 				$sno++;
-				echo "<td><form action='?vis=edit_companyprofile' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Edit ' class='btn btn-info btn-sm pull-left'/></form><form action='del_companyprofile.php' method='post' onSubmit='return ConfirmDelete();'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' onclick='return confirm(\"Are you sure you want to delete this data?\");' value='Delete' class='btn btn-danger btn-sm pull-left'/></form></td></tr>";
+				echo "<td><form action='?vis=edit_companyprofile' method='post'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' value='Edit ' class='btn btn-info btn-sm pull-left'/></form>";
+				// echo"<form action='del_companyprofile.php' method='post' onSubmit='return ConfirmDelete();'><input type='hidden' name='name' value='" . $msgid . "'/><input type='submit' onclick='return confirm(\"Are you sure you want to delete this data?\");' value='Delete' class='btn btn-danger btn-sm pull-left'/></form></td></tr>";
 				$msgid = 0;
 				}
 			}
