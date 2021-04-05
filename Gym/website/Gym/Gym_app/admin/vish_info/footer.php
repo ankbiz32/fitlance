@@ -1,1 +1,0 @@
-<footer class="main"> &copy; 2016 <strong>Cluebix Software Pvt.Ltd</strong></footer>
