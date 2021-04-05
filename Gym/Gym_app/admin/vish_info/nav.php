@@ -17,10 +17,10 @@
 			<ul>
 				<li class="active"><a href="?vis=trainer_details"><span>Members list (Personal trainer details)</span></a></li>
 				<li class=""><a href="?vis=unpaid_trainer"><span>+ Add trainer payment (member to GYM)</span></a></li>
-				<li><a href="?vis=trainer_payment"><span>+ Add trainer comission (GYM to trainer)</span></a></li>
+				<li><a href="?vis=trainer_payment"><span>+ Add trainer commission (GYM to trainer)</span></a></li>
 				<!-- <li class="active"><a href="?vis=trainer_details"><span>Member & Trainer list</span></a></li> -->
 				<!-- <li><a href="?vis=renewal_trainer"><span>Renewal Personal Trainers</span></a></li> -->
-				<li><a href="?vis=view_trainerpay"><span>Trainers comission history (GYM to Trainer)</span></a></li>
+				<li><a href="?vis=view_trainerpay"><span>Trainers commission history (GYM to Trainer)</span></a></li>
 			</ul>
 		</li>
 

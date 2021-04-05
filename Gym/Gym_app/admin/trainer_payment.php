@@ -1,5 +1,5 @@
 ﻿<div class="table-responsive">
-  <h4 class="hed">+ Add trainer Comission/Payment (GYM to trainer)</h4>
+  <h4 class="hed">+ Add trainer Commission/Payment (GYM to trainer)</h4>
   <p>Select any trainer to view their assigned members & add member-wise payment</p>
   <!--<div class="col-sm-12" style="padding-bottom: 15px;"><a href="?vis=trainer" class="btn btn-sm btn-info pull-right">Add Person Trainer</a></div>-->
   <hr />
@@ -16,7 +16,7 @@
     </thead>
     <tbody>
 	  <?php
-        $query  = "select * from trainer_pay GROUP BY staff_id";
+        $query  = "select * from trainer_pay where branch_id='$_SESSION[branch_id]' GROUP BY staff_id ";
         $result = mysqli_query($con, $query);
         $sno    = 1;
           if (mysqli_affected_rows($con) != 0) {

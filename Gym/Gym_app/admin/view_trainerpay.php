@@ -7,7 +7,7 @@ color:#960;
 </style>
 <div class="table-responsive">
 <div class="row">
-	<h4 class="hed col-sm-6">Trainers payment history with details</h4>
+	<h4 class="hed col-sm-6">Trainers commission history with details</h4>
 	  <div class="col-sm-6" style="padding-bottom: 15px;"><form method="post" action="export_trainerpay.php"><input type="submit" name="export" class="btn btn-sm btn-danger pull-right" value="Export To Excel" /></form></div>
 </div>
 <hr />
