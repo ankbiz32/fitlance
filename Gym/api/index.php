@@ -486,6 +486,7 @@
             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                 $date = date('d-m-Y',strtotime( $row['paid_date'] ));
 
+                $resp['data'][$c]['id']=$row['id'];
                 $resp['data'][$c]['pt_name']=$row['trainer_name'];
                 $resp['data'][$c]['pt_id']=$row['trainer_id'];
                 $resp['data'][$c]['mem_name']=$row['member_name'];
@@ -530,9 +531,6 @@
 				$date1 = date('d-m-Y',strtotime( $row['paid_date'] ));
 				$date2 = date('d-m-Y',strtotime( $row['expiry'] ));
 
-                $resp['data']['month_revenue']=$revenue;
-                $resp['data']['month_paid']=$rev_paid;
-                $resp['data']['month_bal']=$rev_bal;
                 $resp['data'][$c]['id']=$row['mem_id'];
                 $resp['data'][$c]['name']=$row1['name'];
                 $resp['data'][$c]['contact']=$row1['contact'];
@@ -543,8 +541,10 @@
                 $resp['data'][$c]['exp_date']=$date2;
 
                 $c++;
-
             }
+            $resp['month_revenue']=$revenue;
+            $resp['month_paid']=$rev_paid;
+            $resp['month_bal']=$rev_bal;
             $resp['month']=date('F-Y');
             $resp['count']=count($resp['data']);
             $resp['status']='success';
@@ -578,9 +578,6 @@
                 $date1 = date('d-m-Y',strtotime( $row['join_date'] ));
                 $date2 = date('d-m-Y',strtotime( $row['expiry_date'] ));
 
-                $resp['data']['month_revenue_pt']=$revenue;
-                $resp['data']['month_paid_pt']=$rev_paid;
-                $resp['data']['month_bal_pt']=$rev_bal;
                 $resp['data'][$c]['mem_name']=$row['member_name'];
                 $resp['data'][$c]['mem_id']=$row['member_id'];
                 $resp['data'][$c]['pt_name']=$row['staff_name'];
@@ -592,6 +589,9 @@
 
                 $c++;
             }
+            $resp['month_revenue_pt']=$revenue;
+            $resp['month_paid_pt']=$rev_paid;
+            $resp['month_bal_pt']=$rev_bal;
             $resp['month']=date('F-Y');
             $resp['count']=count($resp['data']);
             $resp['status']='success';
@@ -626,7 +626,7 @@
 
                 $c++;
             }
-            $resp['data']['total_expenses']=$exp;
+            $resp['total_expenses']=$exp;
             $resp['month']=date('F-Y');
             $resp['status']='success';
             $resp=json_encode($resp);
@@ -664,7 +664,7 @@
 
                 $c++;
             }
-            $resp['data']['total_comission']=$comission;
+            $resp['total_comission']=$comission;
             $resp['month']=date('F-Y');
             $resp['status']='success';
             $resp=json_encode($resp);
@@ -701,9 +701,6 @@
 				$date1 = date('d-m-Y',strtotime( $row['paid_date'] ));
 				$date2 = date('d-m-Y',strtotime( $row['expiry'] ));
 
-                $resp['data']['month_revenue']=$revenue;
-                $resp['data']['month_paid']=$rev_paid;
-                $resp['data']['month_bal']=$rev_bal;
                 $resp['data'][$c]['id']=$row['mem_id'];
                 $resp['data'][$c]['name']=$row1['name'];
                 $resp['data'][$c]['contact']=$row1['contact'];
@@ -713,10 +710,12 @@
                 $resp['data'][$c]['join_date']=$date1;
                 $resp['data'][$c]['exp_date']=$date2;
                 
-
                 $c++;
 
             }
+            $resp['month_revenue']=$revenue;
+            $resp['month_paid']=$rev_paid;
+            $resp['month_bal']=$rev_bal;
             $resp['month']=date('F-Y' , strtotime($date));
             $resp['count']=count($resp['data']);
             $resp['status']='success';
@@ -750,9 +749,6 @@
                 $date1 = date('d-m-Y',strtotime( $row['join_date'] ));
                 $date2 = date('d-m-Y',strtotime( $row['expiry_date'] ));
 
-                $resp['data']['month_revenue_pt']=$revenue;
-                $resp['data']['month_paid_pt']=$rev_paid;
-                $resp['data']['month_bal_pt']=$rev_bal;
                 $resp['data'][$c]['mem_name']=$row['member_name'];
                 $resp['data'][$c]['mem_id']=$row['member_id'];
                 $resp['data'][$c]['pt_name']=$row['staff_name'];
@@ -764,6 +760,9 @@
 
                 $c++;
             }
+            $resp['month_revenue_pt']=$revenue;
+            $resp['month_paid_pt']=$rev_paid;
+            $resp['month_bal_pt']=$rev_bal;
             $resp['month']=date('F-Y' , strtotime($date));
             $resp['count']=count($resp['data']);
             $resp['status']='success';
@@ -803,7 +802,7 @@
 
                 $c++;
             }
-            $resp['data']['total_comission']=$comission;
+            $resp['total_comission']=$comission;
             $resp['month']=date('F-Y' , strtotime($dateM));
             $resp['count']=count($resp['data']);
             $resp['status']='success';
