@@ -65,7 +65,8 @@
             <h2>Joined This Month</h2><br>	
             <?php
             $date  = date('Y-m');
-            $query = "select COUNT(*) from user_data WHERE joining LIKE '$date%' AND branch_id='$_SESSION[branch_id]'";
+            // $query = "select COUNT(*) from user_data WHERE joining LIKE '$date%' AND branch_id='$_SESSION[branch_id]'";
+            $query = "select COUNT(*) from subsciption WHERE paid_date LIKE '$date%' AND branch_id='$_SESSION[branch_id]' AND renewal='yes' AND is_active='1' ";
             $result = mysqli_query($con, $query);
             $i      = 1;
             if (mysqli_affected_rows($con) != 0) {
